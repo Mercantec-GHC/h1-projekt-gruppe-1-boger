@@ -1,0 +1,324 @@
+{
+    "books": [
+      {
+        "book": {
+          "Title": "The Mystery of the Emeralds",
+          "Language": "Spanish",
+          "Tags": ["Fiction", "Mystery", "Adventure"],
+          "Author": "William Martinez",
+          "ReleaseDate": "2000-01-14",
+          "PageCount": 241,
+          "Genre": "Horror"
+        }
+      },
+      {
+        "book": {
+          "Title": "Journey Through the Stars",
+          "Language": "Italian",
+          "Tags": ["Sci-Fi", "Space", "Exploration"],
+          "Author": "Elizabeth Taylor",
+          "ReleaseDate": "2021-02-18",
+          "PageCount": 167,
+          "Genre": "Horror"
+        }
+      },
+      {
+        "book": {
+          "Title": "The Secret of the Old Clock",
+          "Language": "Italian",
+          "Tags": ["Historical", "Mystery", "Suspense"],
+          "Author": "Jennifer Jackson",
+          "ReleaseDate": "2001-02-03",
+          "PageCount": 263,
+          "Genre": "Historical"
+        }
+      },
+      {
+        "book": {
+          "Title": "Lost in the Shadows",
+          "Language": "German",
+          "Tags": ["Horror", "Supernatural", "Thriller"],
+          "Author": "David Anderson",
+          "ReleaseDate": "2016-07-15",
+          "PageCount": 398,
+          "Genre": "Horror"
+        }
+      },
+      {
+        "book": {
+          "Title": "The Haunted Mansion",
+          "Language": "Spanish",
+          "Tags": ["Fantasy", "Mystery", "Haunted"],
+          "Author": "Jennifer Jackson",
+          "ReleaseDate": "2015-12-24",
+          "PageCount": 263,
+          "Genre": "Horror"
+        }
+      },
+      {
+        "book": {
+          "Title": "Adventures in Wonderland",
+          "Language": "English",
+          "Tags": ["Fantasy", "Adventure", "Mystery"],
+          "Author": "Robert Brown",
+          "ReleaseDate": "2019-03-11",
+          "PageCount": 453,
+          "Genre": "Fiction"
+        }
+      },
+      {
+        "book": {
+          "Title": "The Quest for the Lost City",
+          "Language": "German",
+          "Tags": ["Adventure", "Exploration", "Mystery"],
+          "Author": "David Anderson",
+          "ReleaseDate": "2015-10-29",
+          "PageCount": 460,
+          "Genre": "Historical"
+        }
+      },
+      {
+        "book": {
+          "Title": "A Tale of Two Futures",
+          "Language": "Spanish",
+          "Tags": ["Sci-Fi", "Futuristic", "Drama"],
+          "Author": "Jennifer Jackson",
+          "ReleaseDate": "2002-01-23",
+          "PageCount": 445,
+          "Genre": "Sci-Fi"
+        }
+      },
+      {
+        "book": {
+          "Title": "The Last of the Wizards",
+          "Language": "German",
+          "Tags": ["Fantasy", "Magic", "Adventure"],
+          "Author": "John Smith",
+          "ReleaseDate": "2007-02-06",
+          "PageCount": 114,
+          "Genre": "Horror"
+        }
+      },
+      {
+        "book": {
+          "Title": "The Hidden Valley",
+          "Language": "Italian",
+          "Tags": ["Adventure", "Mystery", "Nature"],
+          "Author": "Jennifer Jackson",
+          "ReleaseDate": "2011-05-16",
+          "PageCount": 274,
+          "Genre": "Historical"
+        }
+      },
+      {
+        "book": {
+          "Title": "Beyond the Mountains",
+          "Language": "German",
+          "Tags": ["Adventure", "Exploration", "Nature"],
+          "Author": "Richard White",
+          "ReleaseDate": "2003-10-22",
+          "PageCount": 281,
+          "Genre": "Fiction"
+        }
+      },
+      {
+        "book": {
+          "Title": "The Forgotten Island",
+          "Language": "German",
+          "Tags": ["Mystery", "Adventure", "Island"],
+          "Author": "Robert Brown",
+          "ReleaseDate": "2007-12-27",
+          "PageCount": 472,
+          "Genre": "Horror"
+        }
+      },
+      {
+        "book": {
+          "Title": "Flight of the Phoenix",
+          "Language": "French",
+          "Tags": ["Fantasy", "Adventure", "Mythical"],
+          "Author": "Emily Johnson",
+          "ReleaseDate": "2002-08-27",
+          "PageCount": 401,
+          "Genre": "Fantasy"
+        }
+      },
+      {
+        "book": {
+          "Title": "The Enchanted Forest",
+          "Language": "German",
+          "Tags": ["Fantasy", "Magical", "Adventure"],
+          "Author": "Emily Johnson",
+          "ReleaseDate": "2018-04-07",
+          "PageCount": 159,
+          "Genre": "Fiction"
+        }
+      },
+      {
+        "book": {
+          "Title": "The Lost Civilization",
+          "Language": "French",
+          "Tags": ["Historical", "Adventure", "Ancient"],
+          "Author": "William Martinez",
+          "ReleaseDate": "2011-11-04",
+          "PageCount": 226,
+          "Genre": "Horror"
+        }
+      }
+    ],
+    "boardGames": [
+        {
+          "boardGame": {
+            "Title": "Galactic Conquest",
+            "Language": "Italian",
+            "Tags": ["Strategy", "Sci-Fi", "Space"],
+            "Developer": "GameWorks Studios",
+            "PlayerCount": 5,
+            "ExpectedPlaytime": "101 minutes"
+          }
+        },
+        {
+          "boardGame": {
+            "Title": "Mysteries of the Pyramid",
+            "Language": "German",
+            "Tags": ["Strategy", "Adventure", "Historical"],
+            "Developer": "BoardMaster Inc.",
+            "PlayerCount": 3,
+            "ExpectedPlaytime": "95 minutes"
+          }
+        },
+        {
+          "boardGame": {
+            "Title": "Lost Seas Adventure",
+            "Language": "German",
+            "Tags": ["Adventure", "Exploration", "Family"],
+            "Developer": "FunTime Games",
+            "PlayerCount": 2,
+            "ExpectedPlaytime": "130 minutes"
+          }
+        },
+        {
+            "boardGame": {
+              "Title": "Kingdoms at War",
+              "Language": "German",
+              "Tags": ["Strategy", "War", "Medieval"],
+              "Developer": "Strategic Minds",
+              "PlayerCount": 4,
+              "ExpectedPlaytime": "68 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Quest for Atlantis",
+              "Language": "Italian",
+              "Tags": ["Adventure", "Mythology", "Underwater"],
+              "Developer": "Mythic Creations",
+              "PlayerCount": 6,
+              "ExpectedPlaytime": "94 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Jungle Expedition",
+              "Language": "Italian",
+              "Tags": ["Adventure", "Jungle", "Exploration"],
+              "Developer": "Adventure Awaits",
+              "PlayerCount": 2,
+              "ExpectedPlaytime": "54 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Race to the North Pole",
+              "Language": "English",
+              "Tags": ["Family", "Adventure", "Arctic"],
+              "Developer": "Polar Play",
+              "PlayerCount": 2,
+              "ExpectedPlaytime": "60 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Pirate's Treasure Hunt",
+              "Language": "French",
+              "Tags": ["Adventure", "Pirate", "Treasure"],
+              "Developer": "Treasure Hunters",
+              "PlayerCount": 4,
+              "ExpectedPlaytime": "56 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Escape from the Labyrinth",
+              "Language": "French",
+              "Tags": ["Mystery", "Strategy", "Maze"],
+              "Developer": "MazeMasters",
+              "PlayerCount": 6,
+              "ExpectedPlaytime": "128 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Tower of Wizardry",
+              "Language": "English",
+              "Tags": ["Fantasy", "Magic", "Strategy"],
+              "Developer": "Wizardry World",
+              "PlayerCount": 4,
+              "ExpectedPlaytime": "37 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Voyage of the Vikings",
+              "Language": "French",
+              "Tags": ["Adventure", "Viking", "Exploration"],
+              "Developer": "Viking Ventures",
+              "PlayerCount": 6,
+              "ExpectedPlaytime": "143 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Desert Caravan",
+              "Language": "French",
+              "Tags": ["Strategy", "Adventure", "Desert"],
+              "Developer": "Desert Explorers",
+              "PlayerCount": 4,
+              "ExpectedPlaytime": "178 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Haunted Castle",
+              "Language": "French",
+              "Tags": ["Horror", "Adventure", "Haunted"],
+              "Developer": "Ghostly Games",
+              "PlayerCount": 6,
+              "ExpectedPlaytime": "31 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "City of the Future",
+              "Language": "German",
+              "Tags": ["Strategy", "Futuristic", "City Building"],
+              "Developer": "Future City",
+              "PlayerCount": 3,
+              "ExpectedPlaytime": "88 minutes"
+            }
+          },
+          {
+            "boardGame": {
+              "Title": "Dinosaur Safari",
+              "Language": "English",
+              "Tags": ["Family", "Adventure", "Dinosaurs"],
+              "Developer": "Dino Discoveries",
+              "PlayerCount": 6,
+              "ExpectedPlaytime": "42 minutes"
+            }
+        }
+    ]
+}
+
+
+  
