@@ -1,0 +1,19 @@
+﻿@page "/ListingBox"
+@using Domain_Models.Webshop.Models
+
+@switch (Size)
+{
+    case 0: <ListingBoxSmall listing=listing />; break;
+    case 1: <ListingBoxMedium listing=listing />; break;
+    case 2: <ListingBoxLarge listing=listing />; break;
+}
+
+@code{
+    // Listing is the model used for the listing box (MUST be provided)
+    [Parameter, EditorRequired]
+    public Listing listing { get; set; } = new Listing();
+
+    // Size indicates the size of the box (0, 1, 2)
+    [Parameter]
+    public int Size { get; set; } = 1;
+}

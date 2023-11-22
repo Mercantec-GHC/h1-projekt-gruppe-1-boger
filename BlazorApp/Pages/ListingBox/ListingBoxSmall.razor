@@ -1,0 +1,21 @@
+﻿@page "/ListingBoxSmall"
+@using Domain_Models.Webshop.Models
+
+<div class="listing-box-small">
+    <div class="inner-box">
+        <div class="image-box">
+            <figure class="image"><a href="listing-single.html"><img src="images/resource/featured-image-1.jpg" alt=""></a></figure>
+        </div>
+        <div class="detail-box">
+            <div class="title"><a href="listing-single.html">@listing.Item.Titel</a></div>
+            <div class="seller"><a href="listing-single.html">@listing.Seller.Name</a></div>
+            <div class="price">€@listing.Price</div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter, EditorRequired]
+    public Listing listing { get; set; }
+}
