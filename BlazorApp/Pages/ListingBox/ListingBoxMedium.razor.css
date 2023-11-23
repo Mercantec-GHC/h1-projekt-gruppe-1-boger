@@ -1,36 +1,73 @@
-﻿:root{
-    --bg-color: wheat;
+﻿:root {
+    --dark-text-color: #090937;
+    --dark-text-color-seethrough-1: #09093799;
+    --dark-text-color-seethrough-2: #0909371A;
+    --purple-text-color: #6251DD;
+    --near-white-color: #F4F4FF;
 }
 
-:root a{
+a {
     text-decoration: none;
+    color: inherit;
 }
 
-.listing-box-small {
-    width: 300px;
-    height: 433px;
-    background-color: var(--bg-color);
-}
-
-.inner-box{
+.listing-box-medium {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
+    width: 300px;
+    padding: 20px;
+    flex-direction: column;
     align-items: center;
-
+    gap: 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(9,9,55,0.1);
+    background: #F4F4FF;
 }
 
-.image-box{
-    width: 20px;
+img {
+    width: 200px;
+    height: 300px;
 
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px 0px rgba(98, 81, 221, 0.20);
 }
 
-.image{
-    width: 20px;
-    height: 20px;
+.detail-box {
+    display: flex;
+    width: 260px;
+    padding: 10px 0px;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
-img{
-    width: 100%;
-    height: 100%;
+.name-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.title {
+    color: #090937;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.seller {
+    color: rgba(9, 9, 55, 0.60);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.price {
+    color: #6251DD;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
