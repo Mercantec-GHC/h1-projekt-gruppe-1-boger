@@ -1,4 +1,7 @@
-﻿namespace Domain_Models
+﻿using static System.Net.Mime.MediaTypeNames;
+
+
+namespace Domain_Models
 {
     public class Media
     {
@@ -8,5 +11,4 @@
      public List<Tag>? Tags { get; set; }
      public int Price { get; set; }
     }
-}
 }
