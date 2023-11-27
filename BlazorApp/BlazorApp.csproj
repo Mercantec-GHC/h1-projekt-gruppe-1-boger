@@ -12,4 +12,25 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Images\Board games\7 wonder-min.jpg" />
+    <None Include="wwwroot\Images\Board games\carcassonne-min.jpg" />
+    <None Include="wwwroot\Images\Board games\Catan-min.jpg" />
+    <None Include="wwwroot\Images\Board games\Chess-min.jpg" />
+    <None Include="wwwroot\Images\Board games\codenames-min.jpg" />
+    <None Include="wwwroot\Images\Board games\Monopoly.jpeg-min.jpg" />
+    <None Include="wwwroot\Images\Board games\Pandemic-min.jpg" />
+    <None Include="wwwroot\Images\Board games\risk-min.jpg" />
+    <None Include="wwwroot\Images\Board games\scrabble.jpeg-min.jpg" />
+    <None Include="wwwroot\Images\Board games\ticket-to-ride-europe--min.jpg" />
+    <None Include="wwwroot\Images\Books\Cosmos-min.jpg" />
+    <None Include="wwwroot\Images\Books\Sapiens-min.jpg" />
+    <None Include="wwwroot\Images\Books\Sprint-min.jpg" />
+    <None Include="wwwroot\Images\Books\The Art of CP-min.jpg" />
+    <None Include="wwwroot\Images\Books\The Shadow of the Wind-min.jpg" />
+    <None Include="wwwroot\Images\Books\The_Great_Gatsby_Cover_1925_Retouched-min.jpg" />
+    <None Include="wwwroot\Images\Books\The_Martian_%28Weir_novel%29-min.jpg" />
+    <None Include="wwwroot\Images\Books\William Shakespeare-min.jpg" />
+  </ItemGroup>
+
 </Project>
