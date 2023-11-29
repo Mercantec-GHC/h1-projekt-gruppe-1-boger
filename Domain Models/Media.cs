@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using static System.Net.Mime.MediaTypeNames;
+
 
 namespace Domain_Models
 {
-   public class Media
+    public class Media
     {
-        public int Id { get; set; }
-        public string? Titel { get; set; }
-      
-        // public Language Language { get; set; } ||waiting for enum||
-        public List<Tag>? Tags { get; set; }
+     public int Id { get; set; }
+     public string? Title { get; set; }
+     public string? Description { get; set; }
+     public List<Tag>? Tags { get; set; }
+     public int Price { get; set; }
+     public string ImagePath { get; set; } = "Images/images.png";
     }
 }
