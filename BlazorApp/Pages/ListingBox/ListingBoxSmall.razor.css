@@ -1,0 +1,75 @@
+﻿:root {
+    --dark-text-color: #090937;
+    --dark-text-color-seethrough-1: #09093799;
+    --dark-text-color-seethrough-2: #0909371A;
+    --purple-text-color: #6251DD;
+    --near-white-color: #F4F4FF;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.listing-box-small {
+    display: flex;
+    width: 320px;
+    height: 200px;
+    padding: 10px;
+    align-items: flex-start;
+    gap: 20px;
+
+    border-radius: 4px;
+    border: 1px solid rgba(9,9,55,0.1);
+    background: #F4F4FF;
+}
+
+img {
+    width: 120px;
+    height: 178px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px 0px rgba(98, 81, 221, 0.20);
+}
+
+.detail-box{
+    display: flex;
+    height: 180px;
+    padding: 10px 0px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.name-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.title{
+    color: #090937;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.seller{
+    color: rgba(9, 9, 55, 0.60);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.price{
+    color: #6251DD;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

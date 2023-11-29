@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
   </ItemGroup>
 
+
   <ItemGroup>
     <None Include="wwwroot\Images\Board games\7 wonder.jpg" />
     <None Include="wwwroot\Images\Board games\carcassonne.jpg" />

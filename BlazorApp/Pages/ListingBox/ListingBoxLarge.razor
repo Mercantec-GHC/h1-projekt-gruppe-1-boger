@@ -1,0 +1,40 @@
+﻿@page "/ListingBoxLarge"
+@using Domain_Models.Webshop.Models
+
+<div class="listing-box-large">
+    <div class="book-details-bar">
+        <figure class="back-arrow"><a href="/"><img src="images/resource/back-button.png" alt=""></a></figure>
+        <div class="back-book-details"><a href="/">Book Details</a></div>
+    </div>
+    <div class="contents-box">
+        <div class="image-box">
+            <figure class="image"><a href="listing-single.html"><img src="images/resource/featured-image-1.jpg" alt=""></a></figure>
+        </div>
+        <div class="detail-box">
+            <div class="top-box">
+                <div class="name-box">
+                    <div class="title"><a href="listing-single.html">@listing.Item.Titel</a></div>
+                    <div class="seller"><a href="listing-single.html">@listing.Seller.Name</a></div>
+                </div>
+                <div class="heart-button">
+                    <figure class="heart-button-img"><a href="/"><img src="images/resource/back-button.png" alt=""></a></figure>
+                </div>
+            </div>
+            <div class="description-box">
+                <h4 class="description-title">Description</h4>
+                <p class="description-text">@listing.Item.ToString()</p>
+            </div>
+        </div>
+    </div>
+    <div class="button-box">
+        <a class="button" href="checkout.html">
+            <p class="button-price">@listing.Price kr</p>
+            <p class="button-text">Buy Now</p>
+        </a>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public Listing listing { get; set; }
+}
