@@ -9,6 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\Index.razor.css" />
+    <None Remove="Pages\Search.razor.css" />
+    <None Remove="Shared\Header.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Index.razor.css" />
+    <Content Include="Pages\Search.razor.css" />
+    <Content Include="Shared\Header.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
   </ItemGroup>
 
@@ -32,6 +44,11 @@
     <None Include="wwwroot\Images\Books\The Great Gatsby.jpg" />
     <None Include="wwwroot\Images\Books\The_Martian.jpg" />
     <None Include="wwwroot\Images\Books\William Shakespeare.jpg" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain Models\Domain Models.csproj" />
   </ItemGroup>
 
 </Project>

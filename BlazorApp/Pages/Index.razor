@@ -1,9 +1,10 @@
-﻿@page "/"
+﻿@page "/home"
+@using BlazorApp.Shared.Slider
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Front page</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="sliders">
+    <Slider Title="Best Sellers"></Slider>
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+    <Slider Title="Cool Shit"></Slider>
+</div>

@@ -12,7 +12,7 @@
 @code{
     // Listing is the model used for the listing box (MUST be provided)
     [Parameter, EditorRequired]
-    public Listing listing { get; set; } = new Listing() { Condition = CONDITION.NEW, ID = 1, Price = 99, Item = new Domain_Models.Media() { Titel = "Book title" }, Seller = new Seller() { Name = "Seller" } };
+    public Listing listing { get; set; } = new Listing() { Condition = CONDITION.NEW, ID = 1, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } };
 
     // Size indicates the size of the box (0, 1, 2)
     [Parameter]

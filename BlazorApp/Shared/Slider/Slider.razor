@@ -1,0 +1,43 @@
+﻿@page "/Slider"
+@using Domain_Models.Webshop.Models
+@using BlazorApp.Shared.ListingBox
+@using Domain_Models
+@using Domain_Models.Enums
+
+@* A slider that is made out of small listingbox components *@
+
+<div class="slider">
+    <div class="slider-head">
+        <p class="slider-title">@Title</p>
+        <a class="see-more-btn" href="@Link"><p>View All</p></a>
+    </div>
+    <div class="slider-body">
+        @foreach (var listing in Listings)
+        {
+            <ListingBox Size=0 listing=@listing></ListingBox>
+        }
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public string Title { get; set; } = "Slider title";
+
+    [Parameter]
+    public string Link { get; set; } = "/";
+
+    [Parameter]
+    public List<Listing> Listings { get; set; } = new List<Listing>()
+    {
+        new Listing() { Condition = CONDITION.NEW, ID = 1, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 2, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 3, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 4, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 5, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 6, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 7, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } }
+    };
+
+    
+}
