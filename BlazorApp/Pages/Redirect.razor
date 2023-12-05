@@ -4,6 +4,14 @@
 @code {
     protected override void OnInitialized()
     {
-        //NavigationManager.NavigateTo("/home");
+        try
+        {
+            NavigationManager.NavigateTo("/home");
+
+        } catch (Exception error)
+        {
+            Console.WriteLine(error);
+        }
+
     }
 }
