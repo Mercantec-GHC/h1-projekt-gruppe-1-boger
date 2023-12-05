@@ -1,0 +1,41 @@
+﻿.slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    background: #FFF;
+    overflow: clip;
+    width: 100%;
+}
+
+.slider .slider-head{
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider .slider-head .slider-title {
+    color: #090937;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.slider .slider-head .see-more-btn {
+    color: #EF6B4A;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.slider .slider-body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    overflow: clip;
+}

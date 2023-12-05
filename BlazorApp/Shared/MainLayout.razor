@@ -3,16 +3,19 @@
 <PageTitle>BlazorApp</PageTitle>
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
+    <div class="nav-menus">
+        <div class="header">
+            <Header/>
+        </div>
+
     </div>
 
     <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <div class="sidebar">
+            <NavMenu/>
         </div>
 
-        <article class="content px-4">
+        <article class="content">
             @Body
         </article>
     </main>

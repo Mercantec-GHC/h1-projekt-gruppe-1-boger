@@ -1,0 +1,50 @@
+﻿@using Domain_Models.Webshop.Models
+@inject NavigationManager NavigationManager
+
+<div class="header-body">
+    <a class="logo" href="/">
+        <img src="favicon.ico" alt="The websites logo"/>
+    </a>
+    <div class="search-bar" style="@GetOpacity()">
+        <input type="text" placeholder="Search for books, authors, etc." oninput="@Search()">
+    </div>
+    <div class="user-bar">
+        @if (IsLoggedIn)
+        {
+            <a class="user-btn" href="/Profile">
+                <img src="images/resource/user-icon.png" alt="User icon"/>
+            </a>
+            <a class="user-btn" href="/Cart">
+                <img src="images/resource/cart-icon.png" alt="Cart icon"/>
+            </a>
+            <a class="user-btn" href="/Logout">
+                <img src="images/resource/logout-icon.png" alt="Logout icon"/>
+            </a>
+        }
+        else
+        {
+            <a class="user-btn" href="/Login">
+                <img src="images/resource/user-icon.png" alt="User icon"/>
+            </a>
+            <a class="user-btn" href="/Register">
+                <img src="images/resource/cart-icon.png" alt="Cart icon"/>
+            </a>
+        }
+    </div>
+</div>
+
+@code {
+
+
+    public string GetOpacity()
+    {
+        return NavigationManager.Uri.Contains("search") ? "opacity: 0;" : "opacity: 1;";
+    }
+
+    public bool IsLoggedIn { get; set; } = false;
+
+    public string Search()
+    {
+        return "";
+    }
+}

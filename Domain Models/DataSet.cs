@@ -22,11 +22,14 @@
             English
         }
 
+        public Book[] Books { get; set; }
+        public BoardGame[] BoardGames { get; set; }
+
         public void Book()
         {
-            Book[] books = new Book[10];
+            Books = new Book[10];
 
-            books[0] = new Book
+            Books[0] = new Book
             {
                 Id = 1,
                 Title = "Cosmos",
@@ -39,7 +42,7 @@
                 Price = 140,
                 ImagePath = "Images/Books/Cosmos.jpg"
             };
-            books[1] = new Book
+            Books[1] = new Book
             {
                 Id = 2,
                 Title = "The Odyssey",
@@ -52,7 +55,7 @@
                 Price = 205,
                 ImagePath = "Image/Books/The Odyssey.jpg"
             };
-            books[2] = new Book
+            Books[2] = new Book
             {
                 Id = 3,
                 Title = "The Adventures of Huckleberry Finn",
@@ -65,7 +68,7 @@
                 Price = 80,
                 ImagePath = "Image/Books/Huckleberry Finn.jpg"
             };
-            books[3] = new Book
+            Books[3] = new Book
             {
                 Id = 4,
                 Title = "Sapiens: A Brief History of Humankind",
@@ -78,7 +81,7 @@
                 Price = 90,
                 ImagePath = "Images/Books/Sapiens.jpg"
             };
-            books[4] = new Book
+            Books[4] = new Book
             {
                 Id = 5,
                 Title = "Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days",
@@ -91,7 +94,7 @@
                 Price = 150,
                 ImagePath = "Images/Books/Sprint.jpg"
             };
-            books[5] = new Book
+            Books[5] = new Book
             {
                 Id = 6,
                 Title = "The Art of Computer Programming",
@@ -104,7 +107,7 @@
                 Price = 400,
                 ImagePath = "Images/Books/The Art of CP.jpg"
             };
-            books[6] = new Book
+            Books[6] = new Book
             {
                 Id = 7,
                 Title = "The Shadow of the Wind",
@@ -117,7 +120,7 @@
                 Price = 150,
                 ImagePath = "Images/Books/The Shadow of the Wind.jpg"
             };
-            books[7] = new Book
+            Books[7] = new Book
             {
                 Id = 8,
                 Title = "The Great Gatsby",
@@ -130,7 +133,7 @@
                 Price = 80,
                 ImagePath = "Images/Books/The Great Gatsby.jpg"
             };
-            books[8] = new Book
+            Books[8] = new Book
             {
                 Id = 9,
                 Title = "The Martian",
@@ -143,7 +146,7 @@
                 Price = 110,
                 ImagePath = "Images/Books/The_Martian.jpg"
             };
-            books[9] = new Book
+            Books[9] = new Book
             {
                 Id = 10,
                 Title = "The Tragedie of Romeo and Juliet",
@@ -162,9 +165,9 @@
 
         public void BoardGame()
         {
-            BoardGame[] boardGames = new BoardGame[10];
+            BoardGames = new BoardGame[10];
 
-            boardGames[0] = new BoardGame
+            BoardGames[0] = new BoardGame
             {
                 Id = 11,
                 Title = "Monopoly",
@@ -178,7 +181,7 @@
                 ImagePath = "Images/Board games/Monopoly.jpg"
 
             };
-            boardGames[1] = new BoardGame
+            BoardGames[1] = new BoardGame
             {
                 Id = 12,
                 Title = "Scrabble",
@@ -192,7 +195,7 @@
                 ImagePath = "Images/Board games/scrabble.jpg"
 
             };
-            boardGames[2] = new BoardGame
+            BoardGames[2] = new BoardGame
             {
                 Id = 13,
                 Title = "Chess",
@@ -206,7 +209,7 @@
                 ImagePath = "Images/Board games/Chess.jpg"
 
             };
-            boardGames[3] = new BoardGame
+            BoardGames[3] = new BoardGame
             {
                 Id = 14,
                 Title = "Risk",
@@ -220,7 +223,7 @@
                 ImagePath = "Images/Board games/risk.jpg"
 
             };
-            boardGames[4] = new BoardGame
+            BoardGames[4] = new BoardGame
             {
                 Id = 15,
                 Title = "Settlers of Catan",
@@ -234,7 +237,7 @@
                 ImagePath = "Images/Board games/Catan.jpg"
 
             };
-            boardGames[5] = new BoardGame
+            BoardGames[5] = new BoardGame
             {
                 Id = 16,
                 Title = "Ticket to Ride",
@@ -248,7 +251,7 @@
                 ImagePath = "Images/Board games/ticket-to-ride-europe.jpg"
 
             };
-            boardGames[6] = new BoardGame
+            BoardGames[6] = new BoardGame
             {
                 Id = 17,
                 Title = "Carcassonne",
@@ -262,7 +265,7 @@
                 ImagePath = "Images/Board games/carcassonne.jpg"
 
             };
-            boardGames[7] = new BoardGame
+            BoardGames[7] = new BoardGame
             {
                 Id = 18,
                 Title = "Pandemic",
@@ -276,7 +279,7 @@
                 ImagePath = "Images/Board games/Pandemic.jpg"
 
             };
-            boardGames[8] = new BoardGame
+            BoardGames[8] = new BoardGame
             {
                 Id = 19,
                 Title = "Codenames",
@@ -290,7 +293,7 @@
                 ImagePath = "Images/Board games/codenames.jpg"
 
             };
-            boardGames[9] = new BoardGame
+            BoardGames[9] = new BoardGame
             {
                 Id = 20,
                 Title = "7 Wonders",

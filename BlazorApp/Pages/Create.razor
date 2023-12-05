@@ -1,0 +1,40 @@
+﻿@page "/create"
+@using Domain_Models
+
+<PageTitle>Create</PageTitle>
+
+
+<select onchange="@OnChange">
+    <option value="0">Select an option</option>
+    <option value="1">Book</option>
+    <option value="2">Board game</option>
+    <option value="3">Tag</option>
+    <option value="4">User</option>
+    <option value="5">Listing</option>
+    <option value="6">Seller</option>
+</select>
+
+
+<form class="create-object">
+    @switch(SelectedForm) 
+    {
+        case 1: <CreateBook>Howdy</CreateBook> break;
+        case 2: <CreateBoardGame>dgdrg</CreateBoardGame> break;
+        case 3: <CreateTag>Doowop</CreateTag> break;
+        case 4: <Counter></Counter> break;
+        case 5: <CreateListing></CreateListing> break;
+        case 6: <CreateSeller></CreateSeller> break;
+        default: break;
+    }
+</form>
+
+
+@code {
+
+    private void OnChange(ChangeEventArgs e)
+    {
+        SelectedForm = Convert.ToInt32(e.Value);
+    }
+
+    private int SelectedForm { get; set; }
+}

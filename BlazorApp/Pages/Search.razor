@@ -1,0 +1,40 @@
+﻿@page "/search"
+
+<h3>Search</h3>
+
+<div class="search-container">
+    <input type="text" @bind="SearchQuery" placeholder="Enter search term..." />
+    <button @onclick="PerformSearch">Search</button>
+</div>
+
+@if (SearchResults != null)
+{
+    <div class="search-results">
+        <h4>Results:</h4>
+        @foreach (var result in SearchResults)
+        {
+            <p>@result</p>
+        }
+    </div>
+}
+else
+{
+    <p>Enter a term to start searching.</p>
+}
+
+@code {
+    private string SearchQuery { get; set; }
+    private List<string> SearchResults { get; set; }
+
+    private void PerformSearch()
+    {
+    // Perform the search logic here
+    // For demonstration, generating dummy results based on the search query
+        SearchResults = new List<string>
+        {
+            $"Result 1 for '{SearchQuery}'",
+            $"Result 2 for '{SearchQuery}'",
+    // Add more dummy results or implement actual search logic
+        };
+    }
+}
