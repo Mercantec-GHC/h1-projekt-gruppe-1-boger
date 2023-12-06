@@ -1,6 +1,4 @@
-﻿using System.Net.Http.Headers;
-
-namespace Domain_Models.Webshop.Models
+﻿namespace Domain_Models.Webshop.User
 {
     public class Seller : User
     {

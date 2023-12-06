@@ -1,4 +1,6 @@
-﻿namespace Domain_Models
+﻿using Domain_Models.Webshop.Media;
+
+namespace Domain_Models.Webshop
 {
     public class DataSet
     {
