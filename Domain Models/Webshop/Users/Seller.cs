@@ -1,4 +1,6 @@
-﻿namespace Domain_Models.Webshop.User
+﻿using Domain_Models.Webshop.Medias;
+
+namespace Domain_Models.Webshop.Users
 {
     public class Seller : User
     {

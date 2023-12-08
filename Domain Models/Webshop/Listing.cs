@@ -1,6 +1,7 @@
 ﻿using Domain_Models.Database;
 using Domain_Models.Enums;
-using Domain_Models.Webshop.User;
+using Domain_Models.Webshop.Medias;
+using Domain_Models.Webshop.Users;
 
 namespace Domain_Models.Webshop
 {
@@ -9,7 +10,7 @@ namespace Domain_Models.Webshop
         // Properties
         public int ID { get; set; }
         public int Price { get; set; }
-        public Media.Media Item { get; set; }
+        public Media Item { get; set; }
         public Seller Seller { get; set; }
         public CONDITION Condition { get; set; }
 

@@ -3,7 +3,8 @@
 @using Domain_Models
 @using Domain_Models.Enums
 @using Domain_Models.Webshop
-@using Domain_Models.Webshop.User
+@using Domain_Models.Webshop.Users
+@using Domain_Models.Webshop.Medias
 
 @* A slider that is made out of small listingbox components *@
 
@@ -31,13 +32,13 @@
     [Parameter]
     public List<Listing> Listings { get; set; } = new List<Listing>()
     {
-        new Listing() { Condition = CONDITION.NEW, ID = 1, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 2, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 3, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 4, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 5, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 6, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 7, Price = 99, Item = new Domain_Models.Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } }
+        new Listing() { Condition = CONDITION.NEW, ID = 1, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 2, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 3, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 4, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 5, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 6, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
+        new Listing() { Condition = CONDITION.NEW, ID = 7, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } }
     };
 
     

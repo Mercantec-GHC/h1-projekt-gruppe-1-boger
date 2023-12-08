@@ -1,6 +1,6 @@
 ﻿using Domain_Models.Database;
 
-namespace Domain_Models.Webshop.User
+namespace Domain_Models.Webshop.Users
 {
     public class User : IDatabaseEntry
     {

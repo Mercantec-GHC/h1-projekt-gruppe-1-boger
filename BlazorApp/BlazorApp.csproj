@@ -39,11 +39,11 @@
     <None Include="wwwroot\Images\Books\Cosmos.jpg" />
     <None Include="wwwroot\Images\Books\Sapiens.jpg" />
     <None Include="wwwroot\Images\Books\Sprint.jpg" />
-    <None Include="wwwroot\Images\Books\The Art of CP.jpg" />
-    <None Include="wwwroot\Images\Books\The Shadow of the Wind.jpg" />
-    <None Include="wwwroot\Images\Books\The Great Gatsby.jpg" />
+    <None Include="wwwroot\Images\Books\The_Art_of_CP.jpg" />
+    <None Include="wwwroot\Images\Books\The_Shadow_of_the_Wind.jpg" />
+    <None Include="wwwroot\Images\Books\The_Great_Gatsby.jpg" />
     <None Include="wwwroot\Images\Books\The_Martian.jpg" />
-    <None Include="wwwroot\Images\Books\William Shakespeare.jpg" />
+    <None Include="wwwroot\Images\Books\William_Shakespeare.jpg" />
   </ItemGroup>
 
 

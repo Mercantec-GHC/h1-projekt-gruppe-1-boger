@@ -1,10 +1,31 @@
 ﻿@page "/home"
 @using BlazorApp.Shared.Slider
+@using Domain_Models.Enums
+@using Domain_Models.Webshop
+@using Domain_Models.Webshop.Medias
+@using Domain_Models.Webshop.Users
 
 <PageTitle>Front page</PageTitle>
 
 <div class="sliders">
-    <Slider Title="Best Sellers"></Slider>
+    <Slider Title="Best Sellers" Listings="@listings"></Slider>
 
-    <Slider Title="Cool Shit"></Slider>
+    <Slider Title="New Titles"></Slider>
 </div>
+
+
+@code
+{
+    private List<Listing> listings = new List<Listing>();
+
+    protected override void OnInitialized()
+    {
+        DataSet dataSet = new DataSet();
+        
+        foreach (Book book in dataSet.Book())
+        {
+            listings.Add(new Listing() { Condition = CONDITION.NEW, Price = new Random().Next(0, 100), ID = new Random().Next(0, 100), Item = book, Seller = new Seller() });
+        }
+
+    }
+}

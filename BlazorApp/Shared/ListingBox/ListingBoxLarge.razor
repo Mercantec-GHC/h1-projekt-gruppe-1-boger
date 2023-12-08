@@ -1,5 +1,5 @@
 ﻿@page "/ListingBoxLarge"
-@using Domain_Models.Webshop.User
+@using Domain_Models.Webshop.Users
 @using Domain_Models.Webshop
 
 <div class="listing-box-large">
@@ -9,7 +9,7 @@
     </div>
     <div class="contents-box">
         <div class="image-box">
-            <figure class="image"><a href="listing-single.html"><img src="images/resource/featured-image-1.jpg" alt=""></a></figure>
+            <figure class="image"><a href="listing-single.html"><img src="@listing.Item.ImagePath" alt=""></a></figure>
         </div>
         <div class="detail-box">
             <div class="top-box">

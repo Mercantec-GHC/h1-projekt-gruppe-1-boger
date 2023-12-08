@@ -1,4 +1,4 @@
-﻿namespace Domain_Models.Webshop.Media
+﻿namespace Domain_Models.Webshop.Medias
 {
     public class BoardGame : Media
     {
