@@ -1,4 +1,5 @@
-﻿using Domain_Models.Webshop.Medias;
+﻿using Domain_Models.Database;
+using Domain_Models.Webshop.Medias;
 
 namespace Domain_Models.Webshop.Users
 {
@@ -10,5 +11,25 @@ namespace Domain_Models.Webshop.Users
 
         // Methods specific to Seller
         public bool CreateListing(Media media) { return true; }
+
+        public override void AddDBEntry()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IDatabaseEntry GetDBEntry(int pKey)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void RemoveDBEntry()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool UpdateDBEntry()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
