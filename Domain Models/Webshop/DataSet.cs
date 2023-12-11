@@ -1,4 +1,6 @@
-﻿namespace Domain_Models
+﻿using Domain_Models.Webshop.Medias;
+
+namespace Domain_Models.Webshop
 {
     public class DataSet
     {
@@ -25,7 +27,7 @@
         public Book[] Books { get; set; }
         public BoardGame[] BoardGames { get; set; }
 
-        public void Book()
+        public Book[] Book()
         {
             Books = new Book[10];
 
@@ -53,7 +55,7 @@
                 Genre = Genre.EpicPoetry,
                 Description = "\"The Odyssey\" is one of the greatest epic poems of ancient Greek literature, attributed to the legendary poet Homer. The narrative follows the hero Odysseus as he embarks on a perilous and transformative journey back home to Ithaca after the Trojan War",
                 Price = 205,
-                ImagePath = "Image/Books/The Odyssey.jpg"
+                ImagePath = "Images/Books/The_Odyssey.jpg"
             };
             Books[2] = new Book
             {
@@ -66,7 +68,7 @@
                 Genre = Genre.Novel,
                 Description = "A nineteenth-century boy from a Mississippi River town recounts his adventures as he travels down the river with a runaway slave, encountering a family involved in a feud, two scoundrels pretending to be royalty, and Tom Sawyer's aunt who mistakes him for Tom.",
                 Price = 80,
-                ImagePath = "Image/Books/Huckleberry Finn.jpg"
+                ImagePath = "Images/Books/Huckleberry_Finn.jpg"
             };
             Books[3] = new Book
             {
@@ -105,7 +107,7 @@
                 Genre = Genre.NonFiction,
                 Description = "Authored by Donald E. Knuth, this multi-volume series is a comprehensive and timeless exploration of computer programming and algorithms.",
                 Price = 400,
-                ImagePath = "Images/Books/The Art of CP.jpg"
+                ImagePath = "Images/Books/The_Art_of_CP.jpg"
             };
             Books[6] = new Book
             {
@@ -118,7 +120,7 @@
                 Genre = Genre.Mystery,
                 Description = "Carlos Ruiz Zafón's atmospheric novel is set in post-World War II Barcelona and follows a young boy who discovers a mysterious book that leads him into a complex and dark mystery.",
                 Price = 150,
-                ImagePath = "Images/Books/The Shadow of the Wind.jpg"
+                ImagePath = "Images/Books/The_Shadow_of_the_Wind.jpg"
             };
             Books[7] = new Book
             {
@@ -131,7 +133,7 @@
                 Genre = Genre.Tragedy,
                 Description = "\"The Great Gatsby\" is a classic novel written by F. Scott Fitzgerald, published in 1925. Set against the backdrop of the Roaring Twenties, the story provides a vivid portrait of the American Jazz Age, exploring themes of wealth, love, and the elusive American Dream.",
                 Price = 80,
-                ImagePath = "Images/Books/The Great Gatsby.jpg"
+                ImagePath = "Images/Books/The_Great_Gatsby.jpg"
             };
             Books[8] = new Book
             {
@@ -157,13 +159,13 @@
                 Genre = Genre.Tragedy,
                 Description = "\"Romeo and Juliet\" is a tragedy written by William Shakespeare early in his career about the romance between two Italian youths from feuding families.",
                 Price = 140,
-                ImagePath = "Images/Books/William Shakespeare.jpg"
+                ImagePath = "Images/Books/William_Shakespeare.jpg"
             };
 
-
+            return Books;
         }
 
-        public void BoardGame()
+        public BoardGame[] BoardGame()
         {
             BoardGames = new BoardGame[10];
 
@@ -310,7 +312,7 @@
 
 
 
-
+            return BoardGames;
 
         }
     }  

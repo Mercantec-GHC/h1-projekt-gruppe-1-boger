@@ -1,6 +1,6 @@
 ﻿using Domain_Models.Database;
 
-namespace Domain_Models.Webshop.Models
+namespace Domain_Models.Webshop.Users
 {
     public class User : IDatabaseEntry
     {
@@ -14,22 +14,22 @@ namespace Domain_Models.Webshop.Models
         public bool BuyListing(Listing listing) { return true; }
         
         // Methods from IDatabaseEntry
-        public void AddDBEntry()
+        public virtual void AddDBEntry()
         {
             throw new NotImplementedException();
         }
 
-        public IDatabaseEntry GetDBEntry(int pKey)
+        public virtual IDatabaseEntry GetDBEntry(int pKey)
         {
             throw new NotImplementedException();
         }
 
-        public void RemoveDBEntry()
+        public virtual void RemoveDBEntry()
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateDBEntry()
+        public virtual bool UpdateDBEntry()
         {
             throw new NotImplementedException();
         }

@@ -1,7 +1,9 @@
 ﻿using Domain_Models.Database;
 using Domain_Models.Enums;
+using Domain_Models.Webshop.Medias;
+using Domain_Models.Webshop.Users;
 
-namespace Domain_Models.Webshop.Models
+namespace Domain_Models.Webshop
 {
     public class Listing : IDatabaseEntry
     {
