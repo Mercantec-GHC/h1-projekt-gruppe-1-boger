@@ -91,5 +91,28 @@ namespace Domain_Models.Database
         {
             throw new NotImplementedException();
         }
+
+
+
+        public static string FetchFromTable(SqlCommand cmd)
+        {
+            Connect();
+            
+            cmd.Connection = _connection;
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            string response = "";
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    response += reader.GetValue(i) + " ";
+                }
+            }   response += "\n";
+
+            return response;
+        }
+
+
     }
 }
