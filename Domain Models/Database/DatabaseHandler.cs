@@ -9,7 +9,7 @@ namespace Domain_Models.Database
 
         public static bool IsConnected { get => _isConnected; set => _isConnected = value; }
 
-        public static bool Create(string? connectionstring = "none")
+        public static bool Create(string? connectionstring = "Server=tcp:secondhandbooks.database.windows.net,1433;Initial Catalog=SecondhandBooksDB;Persist Security Info=False;User ID=secbookadmin;Password=Prideandprejudice!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
         {
             if (connectionstring == "none")
                 connectionstring = Environment.GetEnvironmentVariable("connectionstring");
@@ -86,5 +86,33 @@ namespace Domain_Models.Database
         {
             throw new NotImplementedException();
         }
+
+
+
+        public static string FetchFromTable(SqlCommand cmd)
+        {
+            Connect();
+
+            if (cmd == null)
+            {
+                return "Error";
+            }
+
+            cmd.Connection = _connection;
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            string response = "";
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    response += reader.GetValue(i) + " ";
+                }
+            }   response += "\n";
+
+            return response;
+        }
+
+
     }
 }
