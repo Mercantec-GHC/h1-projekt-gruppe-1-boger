@@ -1,0 +1,31 @@
+﻿@namespace BlazorApp.Pages.CreateComponents
+@using Domain_Models.Webshop
+@using Domain_Models.Enums
+
+<h3>Create Listing</h3>
+
+<EditForm Model="listing">
+    <InputSelect @bind-Value=listing.Condition placeholder="Condition">
+        <option value="@CONDITION.NEW">New</option>
+        <option value="@CONDITION.GOOD">Good</option>
+        <option value="@CONDITION.FAIR">Fair</option>
+        <option value="@CONDITION.POOR">Poor</option>
+    </InputSelect>
+    <InputNumber @bind-Value=listing.Price placeholder="Price"></InputNumber>
+    <br/>
+    <button type="submit" @onclick="OnSubmit">Submit</button>
+</EditForm>
+
+@code {
+    public Listing listing = new Listing();
+    public void OnSubmit()
+    {
+        Console.WriteLine(listing.Item);
+        Console.WriteLine(listing.Seller);
+        Console.WriteLine(listing.Condition);
+        Console.WriteLine(listing.Price);
+
+        listing.AddDBEntry();
+    }
+
+}

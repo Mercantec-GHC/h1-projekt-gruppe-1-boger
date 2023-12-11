@@ -1,15 +1,15 @@
 ﻿@namespace BlazorApp.Pages.CreateComponents
 @using Domain_Models.Webshop.Medias
 
-<h3>Create Book</h3>
+<h3>Create Boardgame</h3>
 
-<EditForm Model="book">
-    <InputText @bind-Value=book.Title placeholder="Title"></InputText>
-    <InputText @bind-Value=book.Author placeholder="Author"></InputText>
-    <InputTextArea @bind-Value=book.Description placeholder="Book description"></InputTextArea>
-    <InputNumber @bind-Value=book.Price placeholder="Price"></InputNumber>
+<EditForm Model="boardgame">
+    <InputText @bind-Value=boardgame.Title placeholder="Title"></InputText>
+    <InputText @bind-Value=boardgame.Developer placeholder="Author"></InputText>
+    <InputTextArea @bind-Value=boardgame.Description placeholder="Boardgame description"></InputTextArea>
+    <InputNumber @bind-Value=boardgame.Price placeholder="Price"></InputNumber>
     <br/>
-    <label for="file">Upload image for book</label>
+    <label for="file">Upload image for boardgame</label>
     <InputFile OnChange="@LoadFiles"></InputFile>
     @if (UploadedFile != null)
     {
@@ -26,23 +26,23 @@
 </EditForm>
 
 @code {
-    public Book book = new Book();
+    public BoardGame boardgame = new BoardGame();
     public IBrowserFile UploadedFile;
     public string Message = "No file selected";
 
-    public void OnSubmit()
+public void OnSubmit()
     {
         if (UploadedFile == null)
             return;
-        Console.WriteLine(book.Title);
-        Console.WriteLine(book.Author);
-        Console.WriteLine(book.Description);
-        Console.WriteLine(book.Price);
+        Console.WriteLine(boardgame.Title);
+        Console.WriteLine(boardgame.Developer);
+        Console.WriteLine(boardgame.Description);
+        Console.WriteLine(boardgame.Price);
 
-        book.AddDBEntry();
+        boardgame.AddDBEntry();
     }
 
-    public async Task LoadFiles(InputFileChangeEventArgs e)
+public async Task LoadFiles(InputFileChangeEventArgs e)
     {
         string message = string.Empty;
         IBrowserFile file = e.File;
@@ -58,6 +58,6 @@
             message = $"Uploaded file ({file.Name}) is invalid";
         }
         
-        Message = message;
+        Console.WriteLine(message);
     }
 }

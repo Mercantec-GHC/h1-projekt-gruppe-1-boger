@@ -1,0 +1,29 @@
+﻿@namespace BlazorApp.Pages.CreateComponents
+@using Domain_Models.Webshop.Users
+
+<h3>Create User</h3>
+
+<EditForm Model="user">
+    <InputText @bind-Value=user.Name placeholder="Name"></InputText>
+    <InputText @bind-Value=user.Address placeholder="Address"></InputText>
+    <InputText @bind-Value=user.Email placeholder="Email"></InputText>
+    <InputNumber @bind-Value=user.PhoneNumber placeholder="Phone number"></InputNumber>
+    <br/>
+    <button type="submit" @onclick="OnSubmit">Submit</button>
+</EditForm>
+
+@code {
+
+    public User user = new User();
+    
+    public void OnSubmit()
+    {
+        Console.WriteLine(user.Name);
+        Console.WriteLine(user.Address);
+        Console.WriteLine(user.Email);
+        Console.WriteLine(user.PhoneNumber);
+    
+        user.AddDBEntry();
+    }
+
+}

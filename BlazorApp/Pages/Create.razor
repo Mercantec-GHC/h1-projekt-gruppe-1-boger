@@ -1,5 +1,6 @@
 ﻿@page "/create"
 @using Domain_Models
+@using BlazorApp.Pages.CreateComponents
 
 <PageTitle>Create</PageTitle>
 
@@ -18,10 +19,10 @@
 <form class="create-object">
     @switch(SelectedForm) 
     {
-        case 1: <CreateBook>Howdy</CreateBook> break;
-        case 2: <CreateBoardGame>dgdrg</CreateBoardGame> break;
-        case 3: <CreateTag>Doowop</CreateTag> break;
-        case 4: <Counter></Counter> break;
+        case 1: <CreateBook></CreateBook> break;
+        case 2: <CreateBoardgame></CreateBoardgame> break;
+        case 3: <CreateTag></CreateTag> break;
+        case 4: <CreateUser></CreateUser> break;
         case 5: <CreateListing></CreateListing> break;
         case 6: <CreateSeller></CreateSeller> break;
         default: break;
