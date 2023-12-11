@@ -1,0 +1,55 @@
+﻿@namespace BlazorApp.Pages.CreateComponents
+@using Domain_Models.Webshop.Medias
+
+<h3>Create Book</h3>
+
+<EditForm Model="book">
+    <InputText @bind-Value=book.Title placeholder="Title"></InputText>
+    <InputText @bind-Value=book.Author placeholder="Author"></InputText>
+    <InputTextArea @bind-Value=book.Description placeholder="Book description"></InputTextArea>
+    <InputNumber @bind-Value=book.Price placeholder="Price"></InputNumber>
+    <InputFile @OnChange="@LoadFiles" ></InputFile>
+    <button type="submit" @onclick="OnSubmit">Submit</button>
+</EditForm>
+
+@code {
+    public Book book = new Book();
+    public List<IBrowserFile> files = new List<IBrowserFile>();
+
+    public void OnSubmit()
+    {
+        Console.WriteLine(book.Title);
+        Console.WriteLine(book.Author);
+        Console.WriteLine(book.Description);
+        Console.WriteLine(book.Price);
+
+
+    }
+
+    public async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+        int maxAllowedFiles = 1;
+        string message = string.Empty;
+
+        if (e.FileCount > maxAllowedFiles)
+        {
+            message = $"You can upload maximum {maxAllowedFiles} file.";
+        }
+        else
+        {
+            IBrowserFile file = e.File;
+            var format = "image/png";
+            if (file.ContentType.Contains(format))
+            {
+               message = $"Uploaded file ({file.Name}) is valid";
+               files.Add(file);
+            }
+            else
+            {
+               message = $"Uploaded file ({file.Name}) is invalid";
+            }
+        }
+
+
+    }
+}
