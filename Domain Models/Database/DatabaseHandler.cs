@@ -97,7 +97,12 @@ namespace Domain_Models.Database
         public static string FetchFromTable(SqlCommand cmd)
         {
             Connect();
-            
+
+            if (cmd == null)
+            {
+                return "Error";
+            }
+
             cmd.Connection = _connection;
 
             SqlDataReader reader = cmd.ExecuteReader();
