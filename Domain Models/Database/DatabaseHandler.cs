@@ -7,6 +7,8 @@ namespace Domain_Models.Database
         private static SqlConnection _connection;
         private static bool _isConnected = false;
 
+        public static string FieldDelimiter = "\n";
+
         public static bool IsConnected { get => _isConnected; set => _isConnected = value; }
 
         public static bool Create(string? connectionstring = "Server=tcp:secondhandbooks.database.windows.net,1433;Initial Catalog=SecondhandBooksDB;Persist Security Info=False;User ID=secbookadmin;Password=Prideandprejudice!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
@@ -88,7 +90,6 @@ namespace Domain_Models.Database
         }
 
 
-
         public static string FetchFromTable(SqlCommand cmd)
         {
             Connect();
@@ -108,7 +109,7 @@ namespace Domain_Models.Database
                 {
                     response += reader.GetValue(i) + " ";
                 }
-            }   response += "\n";
+            }   response += FieldDelimiter;
 
             return response;
         }

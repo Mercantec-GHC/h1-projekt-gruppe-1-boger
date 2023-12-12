@@ -1,4 +1,5 @@
 ﻿using Domain_Models.Database;
+using Microsoft.Data.SqlClient;
 
 namespace Domain_Models.Webshop.Medias
 {
@@ -12,7 +13,8 @@ namespace Domain_Models.Webshop.Medias
 
         public override void AddDBEntry()
         {
-            throw new NotImplementedException();
+            base.AddDBEntry();
+
         }
 
         public override IDatabaseEntry GetDBEntry(int pKey)

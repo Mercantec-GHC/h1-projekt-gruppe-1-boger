@@ -20,14 +20,25 @@ namespace Domain_Models.Webshop.Medias
             cmd.Parameters.AddWithValue("@price", Price);
             cmd.Parameters.AddWithValue("@imagepath", ImagePath);
 
-            string[] result = DatabaseHandler.FetchFromTable(cmd).Split("/n");
+            string[] result = DatabaseHandler.FetchFromTable(cmd).Split(DatabaseHandler.FieldDelimiter);
 
             Id = int.Parse(result[0]);
         }
 
         public virtual IDatabaseEntry GetDBEntry(int pKey)
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM media_table WHERE media_id = @id");
+            cmd.Parameters.AddWithValue("@id", pKey);
+
+            string[] result = DatabaseHandler.FetchFromTable(cmd).Split(DatabaseHandler.FieldDelimiter);
+
+            Id = int.Parse(result[0]);
+            Title = result[1];
+            Description = result[2];
+            Price = int.Parse(result[3]);
+            ImagePath = result[4];
+
+            return this;
         }
 
         public virtual void RemoveDBEntry()
