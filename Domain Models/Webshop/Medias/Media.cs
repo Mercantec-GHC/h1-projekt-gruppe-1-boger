@@ -43,7 +43,15 @@ namespace Domain_Models.Webshop.Medias
 
         public virtual void RemoveDBEntry()
         {
-            throw new NotImplementedException();
+            if (Id == 0)
+            {
+                return;
+            }
+            SqlCommand cmd = new SqlCommand("DELETE FROM media_table WHERE media_id = @id");
+            cmd.Parameters.AddWithValue("@id", Id);
+
+            DatabaseHandler.FetchFromTable(cmd);
+
         }
 
         public virtual bool UpdateDBEntry()
