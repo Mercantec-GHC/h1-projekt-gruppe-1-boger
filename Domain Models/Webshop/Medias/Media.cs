@@ -56,7 +56,19 @@ namespace Domain_Models.Webshop.Medias
 
         public virtual bool UpdateDBEntry()
         {
-            throw new NotImplementedException();
+            if (Id == 0)
+            {
+                return false;
+            }
+            SqlCommand cmd = new SqlCommand("UPDATE media_table SET title = @title, description = @description, original_price = @price, image_path = @imagepath WHERE media_id = @id");
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Parameters.AddWithValue("@title", Title);
+            cmd.Parameters.AddWithValue("@description", Description);
+            cmd.Parameters.AddWithValue("@price", Price);
+            cmd.Parameters.AddWithValue("@imagepath", ImagePath);
+
+            DatabaseHandler.FetchFromTable(cmd);
+            return true;
         }
     }
 }
