@@ -1,4 +1,5 @@
 ﻿using Domain_Models.Database;
+using Microsoft.Data.SqlClient;
 
 namespace Domain_Models.Webshop.Medias
 {
@@ -13,7 +14,15 @@ namespace Domain_Models.Webshop.Medias
 
         public virtual void AddDBEntry()
         {
-            throw new NotImplementedException();
+            SqlCommand cmd = new SqlCommand("INSERT INTO media_table (title, description, original_price, image_path) OUTPUT Inserted.media_id VALUES (@title, @description, @price, @imagepath)");
+            cmd.Parameters.AddWithValue("@title", Title);
+            cmd.Parameters.AddWithValue("@description", Description);
+            cmd.Parameters.AddWithValue("@price", Price);
+            cmd.Parameters.AddWithValue("@imagepath", ImagePath);
+
+            string[] result = DatabaseHandler.FetchFromTable(cmd).Split("/n");
+
+            Id = int.Parse(result[0]);
         }
 
         public virtual IDatabaseEntry GetDBEntry(int pKey)

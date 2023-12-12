@@ -14,6 +14,12 @@
         DRAMA,
         BESTSELLER,
         CLASSICS,
-        CHILDREN
+        CHILDREN,
+        EPICPOETRY,
+        NOVEL,
+        HISTORY,
+        TRAGEDY,
+        MYSTERY,
+        SELFDEVELOPMENT
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Domain_Models.Enums
 {
-    public enum LANGUAGES
+    public enum LANGUAGE
     {
         OTHER = 0,
         ENGLISH,
