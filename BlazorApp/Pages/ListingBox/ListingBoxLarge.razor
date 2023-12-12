@@ -1,4 +1,5 @@
 ﻿@page "/ListingBoxLarge"
+@namespace BlazorApp.Pages.ListingBoxes
 @using Domain_Models.Webshop.Users
 @using Domain_Models.Webshop
 
@@ -9,13 +10,13 @@
     </div>
     <div class="contents-box">
         <div class="image-box">
-            <figure class="image"><a href="listing-single.html"><img src="@listing.Item.ImagePath" alt=""></a></figure>
+            <figure class="image"><a href="ViewListing-@listing.ID"><img src="@listing.Item.ImagePath" alt=""></a></figure>
         </div>
         <div class="detail-box">
             <div class="top-box">
                 <div class="name-box">
-                    <div class="title"><a href="listing-single.html">@listing.Item.Title</a></div>
-                    <div class="seller"><a href="listing-single.html">@listing.Seller.Name</a></div>
+                    <div class="title"><a href="ViewListing-@listing.ID">@listing.Item.Title</a></div>
+                    <div class="seller"><a href="ViewListing-@listing.ID">@listing.Seller.Name</a></div>
                 </div>
                 <div class="heart-button">
                     <figure class="heart-button-img"><a href="/"><img src="images/resource/back-button.png" alt=""></a></figure>

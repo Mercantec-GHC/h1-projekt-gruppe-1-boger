@@ -1,9 +1,11 @@
-﻿@page "/ListingBoxSmall"
+﻿@namespace BlazorApp.Pages.ListingBoxes
+
+@page "/ListingBoxSmall"
 @using Domain_Models.Webshop.Users
 @using Domain_Models.Webshop
 
 <div class="listing-box-small">
-    <figure class="image"><a href="listing-single.html"><img src="@listing.Item.ImagePath" alt=""></a></figure>
+    <figure class="image"><a href="ViewListing-@listing.ID"><img src="@listing.Item.ImagePath" alt=""></a></figure>
     <div class="detail-box">
         <div class="name-box">
             <div class="title"><a href="listing-single.html">@listing.Item.Title</a></div>
