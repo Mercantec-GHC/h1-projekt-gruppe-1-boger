@@ -1,0 +1,23 @@
+﻿@namespace BlazorApp.Pages.CreateComponents
+@using Domain_Models.Webshop
+
+<h3>Create Tag</h3>
+
+<EditForm Model="tag">
+
+    <InputText @bind-Value=tag.Name placeholder="Name"></InputText>
+    <br/>
+    <button type="submit" @onclick="OnSubmit">Submit</button>
+</EditForm>
+
+@code {
+    public Tag tag = new Tag();
+    
+    public void OnSubmit()
+    {
+        Console.WriteLine(tag.Name);
+    
+        tag.AddDBEntry();
+    }
+
+}

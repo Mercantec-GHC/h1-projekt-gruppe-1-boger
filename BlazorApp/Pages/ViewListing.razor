@@ -1,0 +1,20 @@
+﻿@page "/ViewListing-{listingid?}"
+@using BlazorApp
+@using BlazorApp.Pages.ListingBoxes
+@using Domain_Models.Webshop
+
+<ListingBoxLarge listing="@listing"></ListingBoxLarge>
+
+@code {
+    
+    [Parameter]
+    public string? listingid { get; set; }
+
+    public Listing listing { get; set; } = new Listing() { Condition = Domain_Models.Enums.CONDITION.NEW, ID = 1, Price = 99, Item = new Domain_Models.Webshop.Medias.Media() { Title = "Book title" }, Seller = new Domain_Models.Webshop.Users.Seller() { Name = "Seller" } };
+
+    public void OnInitialized()
+    {
+        if (listingid != null)
+            listing = listing.GetDBEntry(Convert.ToInt32(listingid)) as Listing;
+    }
+}

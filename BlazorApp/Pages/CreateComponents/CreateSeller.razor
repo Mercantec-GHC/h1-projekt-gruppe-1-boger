@@ -1,0 +1,20 @@
+@namespace BlazorApp.Pages.CreateComponents
+@using Domain_Models.Webshop.Users
+
+<h3>Create Seller</h3>
+
+<EditForm Model="seller">
+    <InputNumber @bind-Value=seller.Rating></InputNumber>
+    <br/>
+    <button type="submit" @onclick="OnSubmit">Submit</button>
+</EditForm>
+
+@code{
+    public Seller seller = new Seller();
+
+    public void OnSubmit()
+    {
+        Console.WriteLine(seller.Rating);
+        seller.AddDBEntry();
+    }
+}

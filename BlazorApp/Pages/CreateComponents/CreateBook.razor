@@ -1,0 +1,63 @@
+﻿@namespace BlazorApp.Pages.CreateComponents
+@using Domain_Models.Webshop.Medias
+
+<h3>Create Book</h3>
+
+<EditForm Model="book">
+    <InputText @bind-Value=book.Title placeholder="Title"></InputText>
+    <InputText @bind-Value=book.Author placeholder="Author"></InputText>
+    <InputTextArea @bind-Value=book.Description placeholder="Book description"></InputTextArea>
+    <InputNumber @bind-Value=book.Price placeholder="Price"></InputNumber>
+    <br/>
+    <label for="file">Upload image for book</label>
+    <InputFile OnChange="@LoadFiles"></InputFile>
+    @if (UploadedFile != null)
+    {
+        <p>File name: @UploadedFile.Name</p>
+        <p>File size: @UploadedFile.Size</p>
+        <p>File type: @UploadedFile.ContentType</p>
+    }
+    else
+    {
+        <p>@Message</p>
+    }
+    <br/>
+    <button type="submit" @onclick="OnSubmit">Submit</button>
+</EditForm>
+
+@code {
+    public Book book = new Book();
+    public IBrowserFile UploadedFile;
+    public string Message = "No file selected";
+
+    public void OnSubmit()
+    {
+        if (UploadedFile == null)
+            return;
+        Console.WriteLine(book.Title);
+        Console.WriteLine(book.Author);
+        Console.WriteLine(book.Description);
+        Console.WriteLine(book.Price);
+
+        book.AddDBEntry();
+    }
+
+    public async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+        string message = string.Empty;
+        IBrowserFile file = e.File;
+        var format = "image/png";
+        if (file.ContentType.Contains(format))
+        {
+            message = $"Uploaded file ({file.Name}) is valid";
+            UploadedFile = file;
+        }
+        else
+        {
+            UploadedFile = null;
+            message = $"Uploaded file ({file.Name}) is invalid";
+        }
+        
+        Message = message;
+    }
+}

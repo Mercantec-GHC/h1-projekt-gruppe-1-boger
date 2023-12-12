@@ -1,0 +1,63 @@
+﻿@namespace BlazorApp.Pages.CreateComponents
+@using Domain_Models.Webshop.Medias
+
+<h3>Create Boardgame</h3>
+
+<EditForm Model="boardgame">
+    <InputText @bind-Value=boardgame.Title placeholder="Title"></InputText>
+    <InputText @bind-Value=boardgame.Developer placeholder="Author"></InputText>
+    <InputTextArea @bind-Value=boardgame.Description placeholder="Boardgame description"></InputTextArea>
+    <InputNumber @bind-Value=boardgame.Price placeholder="Price"></InputNumber>
+    <br/>
+    <label for="file">Upload image for boardgame</label>
+    <InputFile OnChange="@LoadFiles"></InputFile>
+    @if (UploadedFile != null)
+    {
+        <p>File name: @UploadedFile.Name</p>
+        <p>File size: @UploadedFile.Size</p>
+        <p>File type: @UploadedFile.ContentType</p>
+    }
+    else
+    {
+        <p>@Message</p>
+    }
+    <br/>
+    <button type="submit" @onclick="OnSubmit">Submit</button>
+</EditForm>
+
+@code {
+    public BoardGame boardgame = new BoardGame();
+    public IBrowserFile UploadedFile;
+    public string Message = "No file selected";
+
+public void OnSubmit()
+    {
+        if (UploadedFile == null)
+            return;
+        Console.WriteLine(boardgame.Title);
+        Console.WriteLine(boardgame.Developer);
+        Console.WriteLine(boardgame.Description);
+        Console.WriteLine(boardgame.Price);
+
+        boardgame.AddDBEntry();
+    }
+
+public async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+        string message = string.Empty;
+        IBrowserFile file = e.File;
+        var format = "image/png";
+        if (file.ContentType.Contains(format))
+        {
+            message = $"Uploaded file ({file.Name}) is valid";
+            UploadedFile = file;
+        }
+        else
+        {
+            UploadedFile = null;
+            message = $"Uploaded file ({file.Name}) is invalid";
+        }
+        
+        Console.WriteLine(message);
+    }
+}
