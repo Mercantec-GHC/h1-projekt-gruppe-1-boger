@@ -1,5 +1,6 @@
 ﻿using Domain_Models.Database;
 using Microsoft.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace Domain_Models.Webshop.Medias
 {
@@ -13,23 +14,69 @@ namespace Domain_Models.Webshop.Medias
 
         public override void AddDBEntry()
         {
+            // Will need some sort of check to see if the book already exists in the database
+            // then a check if the media already exists in the database
             base.AddDBEntry();
 
+            SqlCommand cmd = new SqlCommand("INSERT INTO book_table (media_id, artist_id, year, pages, language, genre) VALUES (@mediaid, @author, @year, @pages, @language, @genre)");
+            cmd.Parameters.AddWithValue("@mediaid", Id);
+            cmd.Parameters.AddWithValue("@author", new Random((int)DateTime.Now.ToOADate()).Next());
+            cmd.Parameters.AddWithValue("@year", Year);
+            cmd.Parameters.AddWithValue("@pages", Pages);
+            cmd.Parameters.AddWithValue("@language", $"{Language}");
+
+            DatabaseHandler.FetchFromTable(cmd);
         }
 
         public override IDatabaseEntry GetDBEntry(int pKey)
         {
-            throw new NotImplementedException();
+            base.GetDBEntry(pKey);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM book_table WHERE media_id = @id");
+            cmd.Parameters.AddWithValue("@id", pKey);
+
+            string[] result = DatabaseHandler.FetchFromTable(cmd).Split(DatabaseHandler.FieldDelimiter);
+
+            
+            Author = result[1];
+            Year = int.Parse(result[2]);
+            Pages = int.Parse(result[3]);
+            Language = (DataSet.Language)int.Parse(result[4]);
+
+            return this;
         }
 
         public override void RemoveDBEntry()
         {
-            throw new NotImplementedException();
+            if (Id == 0)
+                return;
+
+            SqlCommand cmd = new SqlCommand("DELETE FROM book_table WHERE media_id = @id");
+            cmd.Parameters.AddWithValue("@id", Id);
+
+            DatabaseHandler.FetchFromTable(cmd);
+
+            base.RemoveDBEntry();
         }
 
         public override bool UpdateDBEntry()
         {
-            throw new NotImplementedException();
+            if (Id == 0)
+                return false;
+            
+            base.UpdateDBEntry();
+            
+            SqlCommand cmd = new SqlCommand("UPDATE book_table SET author = @author, year = @year, pages = @pages, language = @language WHERE media_id = @id");
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Parameters.AddWithValue("@author",
+                               new Random((int) DateTime.Now.ToOADate()).Next());
+            cmd.Parameters.AddWithValue("@year", Year);
+            cmd.Parameters.AddWithValue("@pages", Pages);
+            cmd.Parameters.AddWithValue("@language", $"{Language}");
+
+            DatabaseHandler.FetchFromTable(cmd);
+
+            return true;
         }
     }
 }
