@@ -66,7 +66,7 @@ namespace Domain_Models.Webshop.Medias
             
             base.UpdateDBEntry();
             
-            SqlCommand cmd = new SqlCommand("UPDATE book_table SET author = @author, year = @year, pages = @pages, language = @language WHERE media_id = @id");
+            SqlCommand cmd = new SqlCommand("UPDATE book_table SET artist_id = @author, year = @year, pages = @pages, language = @language WHERE media_id = @id");
             cmd.Parameters.AddWithValue("@id", Id);
             cmd.Parameters.AddWithValue("@author",
                                new Random((int) DateTime.Now.ToOADate()).Next());
