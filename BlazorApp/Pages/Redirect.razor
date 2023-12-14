@@ -2,13 +2,14 @@
 @inject NavigationManager NavigationManager
 
 @code {
-    protected override void OnInitialized()
+    protected override void OnAfterRender(bool firstRender)
     {
         try
         {
             NavigationManager.NavigateTo("/home");
 
-        } catch (Exception error)
+        }
+        catch (Exception error)
         {
             Console.WriteLine(error);
         }

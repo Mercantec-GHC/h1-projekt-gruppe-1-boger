@@ -89,7 +89,6 @@ namespace Domain_Models.Database
         }
 
 
-
         public static string FetchFromTable(SqlCommand cmd)
         {
             Connect();
