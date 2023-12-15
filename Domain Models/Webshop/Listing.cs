@@ -30,17 +30,10 @@ namespace Domain_Models.Webshop
             string[] result = DatabaseHandler.FetchFromTable(cmd).Split(DatabaseHandler.FieldDelimiter);
 
             ID = int.Parse(result[0]);
-            Price = int.Parse(result[1]);
-            Item.Id = int.Parse(result[2]);
-            Item.Title = result[3];
-            Item.Description = result[4];
-            Item.Price = int.Parse(result[5]);
-            Item.ImagePath = result[6];
-            Seller.Name = result[7];
-            Seller.Email = result[8];
-            Seller.PhoneNumber = int.Parse(result[9]);
-            Seller.Address = result[10];
-            Condition = (CONDITION) int.Parse(result[11]);
+            Item = (Media)new Media().GetDBEntry(int.Parse(result[1]));
+            Seller = (Seller)new Seller().GetDBEntry(int.Parse(result[2]));
+            Price = int.Parse(result[3]);
+            Condition = (CONDITION) int.Parse(result[4]);
            
 
             return this; ;
@@ -50,8 +43,8 @@ namespace Domain_Models.Webshop
         {
             SqlCommand cmd = new SqlCommand("INSERT INTO listing_table (listing_price, media_id, seller_id, condition) OUTPUT Inserted.listing_id VALUES (@listing_price, @media_id, @seller_id, @condition)");
             cmd.Parameters.AddWithValue("@listing_price", Price);
-            cmd.Parameters.AddWithValue("@media_id", Item);
-            cmd.Parameters.AddWithValue("@seller_id", Seller);
+            cmd.Parameters.AddWithValue("@media_id", Item.Id);
+            cmd.Parameters.AddWithValue("@seller_id", Seller.Id);
             cmd.Parameters.AddWithValue("@condition", $"{Condition}");
 
             string[] result = DatabaseHandler.FetchFromTable(cmd).Split(DatabaseHandler.FieldDelimiter);
@@ -80,8 +73,8 @@ namespace Domain_Models.Webshop
             SqlCommand cmd = new SqlCommand("UPDATE listing_table SET listing_price = @listing_price, media_id = @media_id, seller_id = @seller_id, condition = @condition WHERE id = @id");
             cmd.Parameters.AddWithValue("@id", ID);
             cmd.Parameters.AddWithValue("@listing_price", Price);
-            cmd.Parameters.AddWithValue("@media_id", Item);
-            cmd.Parameters.AddWithValue("@seller_id", Seller);
+            cmd.Parameters.AddWithValue("@media_id", Item.Id);
+            cmd.Parameters.AddWithValue("@seller_id", Seller.Id);
             cmd.Parameters.AddWithValue("@condition", Condition);
 
             DatabaseHandler.FetchFromTable(cmd);

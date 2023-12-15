@@ -11,8 +11,6 @@
     <Slider Title="Best Sellers" Listings="@listings"></Slider>
 
     <Slider Title="New Titles"></Slider>
-
-    <button class="slider-btn" onclick="@OnButton">See more</button>
 </div>
 
 
@@ -31,11 +29,5 @@
             listings.Add(new Listing() { Condition = CONDITION.NEW, Price = new Random().Next(0, 100), ID = new Random().Next(0, 100), Item = book, Seller = new Seller() });
         }
 
-    }
-
-    private void OnButton()
-    {
-        Media media = new Media() { Description = "This is a description and such", Price = 99, Title = "The raiders of the lost ark", ImagePath = "images/books/Cosmos.jpg" };
-        media.AddDBEntry();
     }
 }

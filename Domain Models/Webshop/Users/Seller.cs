@@ -6,6 +6,7 @@ namespace Domain_Models.Webshop.Users
     public class Seller : User
     {
         // Properties
+        public int Id { get; set; }
         public int Rating { get; set; }
         public List<Listing> Listings { get; set; } = new List<Listing>();
 

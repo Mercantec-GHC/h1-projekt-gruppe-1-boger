@@ -1,4 +1,6 @@
 ﻿@namespace BlazorApp.Pages.CreateComponents
+@using BlazorApp.Data
+@using Domain_Models.Database
 @using Domain_Models.Webshop.Medias
 
 <h3>Create Book</h3>
@@ -34,6 +36,17 @@
     {
         if (UploadedFile == null)
             return;
+
+
+        // Save file to wwwroot/images
+        var path = Path.Combine(Globals.WebHostEnvironment.WebRootPath, "images/Books", UploadedFile.Name);
+        using (var stream = new FileStream(path, FileMode.Create))
+        {
+            UploadedFile.OpenReadStream().CopyTo(stream);
+        }
+
+        book.ImagePath = "images/books/" + UploadedFile.Name;
+
         Console.WriteLine(book.Title);
         Console.WriteLine(book.Author);
         Console.WriteLine(book.Description);
