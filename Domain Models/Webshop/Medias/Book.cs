@@ -4,7 +4,7 @@ using Microsoft.Data.SqlClient;
 
 namespace Domain_Models.Webshop.Medias
 {
-    public class Book : Media
+    public class Book : Media 
     {
         public string? Author { get; set; } = "Empty";
         public int Year { get; set; } = 2021;

@@ -2,7 +2,6 @@
 {
     public enum GENRE
     {
-        OTHER = 0,
         FICTION,
         NONFICTION,
         FANTASY,
@@ -20,6 +19,9 @@
         HISTORY,
         TRAGEDY,
         MYSTERY,
-        SELFDEVELOPMENT
+        SELFDEVELOPMENT,
+        SCIENCE,
+        HOMEANDGARDEN,
+        PHYSICS
     }
 }

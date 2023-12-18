@@ -1,18 +1,16 @@
-﻿namespace Domain_Models.Enums
+﻿using static Domain_Models.Webshop.DataSet;
+
+namespace Domain_Models.Enums
 {
     public enum LANGUAGE
     {
-        OTHER = 0,
         ENGLISH,
         SWEDISH,
-        GERMAN,
-        FRENCH,
         SPANISH,
-        ITALIAN,
-        RUSSIAN,
-        CHINESE,
         JAPANESE,
-        KOREAN,
-        ARABIC
+        PORTUGUESE,
+        DANISH
     }
+
+  
 }
