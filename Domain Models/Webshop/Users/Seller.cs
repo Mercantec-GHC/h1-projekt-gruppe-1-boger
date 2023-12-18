@@ -15,22 +15,22 @@ namespace Domain_Models.Webshop.Users
 
         public override void AddDBEntry()
         {
-            throw new NotImplementedException();
+            base.AddDBEntry();
         }
 
         public override IDatabaseEntry GetDBEntry(int pKey)
         {
-            throw new NotImplementedException();
+            return base.GetDBEntry(pKey);
         }
 
         public override void RemoveDBEntry()
         {
-            throw new NotImplementedException();
+            base.RemoveDBEntry();
         }
 
         public override bool UpdateDBEntry()
         {
-            throw new NotImplementedException();
+            return base.UpdateDBEntry();
         }
     }
 }

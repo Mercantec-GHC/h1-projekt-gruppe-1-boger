@@ -32,7 +32,7 @@
     public IBrowserFile UploadedFile;
     public string Message = "No file selected";
 
-    public void OnSubmit()
+    public async void OnSubmit()
     {
         if (UploadedFile == null)
             return;
@@ -40,9 +40,9 @@
 
         // Save file to wwwroot/images
         var path = Path.Combine(Globals.WebHostEnvironment.WebRootPath, "images/Books", UploadedFile.Name);
-        using (var stream = new FileStream(path, FileMode.Create))
+        using (var fileStream = new FileStream(path, FileMode.Create))
         {
-            UploadedFile.OpenReadStream().CopyTo(stream);
+            await UploadedFile.OpenReadStream().CopyToAsync(fileStream);
         }
 
         book.ImagePath = "images/books/" + UploadedFile.Name;
