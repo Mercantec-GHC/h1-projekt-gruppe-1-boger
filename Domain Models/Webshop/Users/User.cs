@@ -38,10 +38,25 @@ namespace Domain_Models.Webshop.Users
 
             string[] result = DatabaseHandler.FetchFromTable(cmd).Split(DatabaseHandler.FieldDelimiter);
 
+            if (result[0] == "EMPTY")
+            {
+                return this;
+            }
+
+            if (result[0] == string.Empty)
+                result[0] = "0";
             Id = int.Parse(result[0]);
+            if (result[1] == string.Empty)
+                result[1] = "0";
             Name = result[1];
+            if (result[2] == string.Empty)
+                result[2] = "0";
             Email = result[2];
+            if (result[3] == string.Empty)
+                result[3] = "0";
             PhoneNumber = int.Parse(result[3]);
+            if (result[4] == string.Empty)
+                result[4] = "0";
             Address = result[4];
 
             return this;

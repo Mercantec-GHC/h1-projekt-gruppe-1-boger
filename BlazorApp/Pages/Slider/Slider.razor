@@ -32,7 +32,7 @@
     public string Link { get; set; } = "/";
 
     [Parameter]
-    public Filter Filter { get; set; } = new Filter();
+    public Filter Filter { get; set; } = new Filter(fetchAmount: 4);
 
     [Parameter]
     public List<Listing> Listings { get; set; } = new List<Listing>();
@@ -40,6 +40,7 @@
     protected override void OnInitialized()
     {
         Listings = DatabaseHandler.Search(Filter).ToList();
+        
     }
 
     

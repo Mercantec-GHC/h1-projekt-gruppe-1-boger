@@ -12,10 +12,10 @@ namespace Domain_Models.Webshop
     {
         // Properties
         public int ID { get; set; }
-        public int Price { get; set; }
-        public Media Item { get; set; }
-        public Seller Seller { get; set; }
-        public CONDITION Condition { get; set; }
+        public int Price { get; set; } = 99;
+        public Media Item { get; set; } = new Media();
+        public Seller Seller { get; set; } = new Seller();
+        public CONDITION Condition { get; set; } = CONDITION.NEW;
 
         // Methods specific to Listing
         public bool TryUpdateListing() { return true; }
@@ -29,11 +29,32 @@ namespace Domain_Models.Webshop
 
             string[] result = DatabaseHandler.FetchFromTable(cmd).Split(DatabaseHandler.FieldDelimiter);
 
+            if (result[0] == "EMPTY")
+            {
+                return this;
+            }
+
             ID = int.Parse(result[0]);
+            if (result[1] == string.Empty)
+                result[1] = "0";
             Item = (Media)new Media().GetDBEntry(int.Parse(result[1]));
+            if (result[2] == string.Empty)
+                result[2] = "0";
             Seller = (Seller)new Seller().GetDBEntry(int.Parse(result[2]));
+            if (result[3] == string.Empty)
+                result[3] = "0";
             Price = int.Parse(result[3]);
-            Condition = (CONDITION) int.Parse(result[4]);
+            if (result[4] == string.Empty)
+                result[4] = "0";
+            try
+            {
+                Condition = (CONDITION) int.Parse(result[4]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Condition = CONDITION.NEW;
+            }
            
 
             return this; ;

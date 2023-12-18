@@ -25,16 +25,16 @@ namespace Domain_Models.Database
 
         public string GetSqlCommand()
         {
-            string sql = "SELECT l.id FROM listing_table as l ";
-
+            string sql = "SELECT l.id FROM listing_table as l;";
+            /*
             sql += "INNER JOIN media_table AS m ON l.media_id = m.media_id ";
             sql += "INNER JOIN book_table AS book ON book.media_id = m.media_id ";
             sql += "INNER JOIN board_games_table AS boardgame ON boardgame.media_id = m.media_id ";
             sql += "INNER JOIN artist_table AS artist1 ON artist1.artist_id = book.artist_id ";
             sql += "INNER JOIN artist_table AS artist2 ON artist2.artist_id = boardgame.artist_id ";
-
+            
             sql += $"WHERE ( m.title LIKE '%{SearchTerm}%' OR artist1.name LIKE '%{SearchTerm}%' OR artist2.name LIKE '%{SearchTerm}%' )";
-
+            */
             /*
             if (TagIds.Length > 0)
             {
@@ -49,7 +49,7 @@ namespace Domain_Models.Database
             }
             */
 
-            sql += $"ORDER BY l.id OFFSET {FetchOffset} ROWS FETCH NEXT {FetchAmount} ROWS ONLY;";
+            //sql += $"ORDER BY l.id OFFSET {FetchOffset} ROWS FETCH NEXT {FetchAmount} ROWS ONLY;";
 
             return sql;
         }

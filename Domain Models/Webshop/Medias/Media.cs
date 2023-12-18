@@ -6,10 +6,10 @@ namespace Domain_Models.Webshop.Medias
     public class Media : IDatabaseEntry
     {
         public int Id { get; set; }
-        public string? Title { get; set; }
-        public string? Description { get; set; }
+        public string? Title { get; set; } = "Empty";
+        public string? Description { get; set; } = "Empty";
         public List<Tag>? Tags { get; set; }
-        public int Price { get; set; }
+        public int Price { get; set; } = 99;
         public string ImagePath { get; set; } = "Images/images.png";
 
         public virtual void AddDBEntry()

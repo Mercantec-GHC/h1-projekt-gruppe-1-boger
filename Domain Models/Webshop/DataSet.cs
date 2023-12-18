@@ -2,6 +2,7 @@
 
 namespace Domain_Models.Webshop
 {
+    /*
     public class DataSet
     {
         public enum Genre
@@ -316,5 +317,5 @@ namespace Domain_Models.Webshop
 
         }
     }  
-    
+    */
 }
