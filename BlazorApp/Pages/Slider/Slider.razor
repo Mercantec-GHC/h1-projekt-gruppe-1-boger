@@ -32,7 +32,7 @@
     public string Link { get; set; } = "/";
 
     [Parameter]
-    public Filter Filter { get; set; } = new Filter(fetchAmount: 4);
+    public Filter Filter { get; set; } = new Filter();
 
     [Parameter]
     public List<Listing> Listings { get; set; } = new List<Listing>();

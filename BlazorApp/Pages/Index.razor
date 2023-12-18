@@ -1,6 +1,7 @@
 ﻿@page "/home"
 @using BlazorApp.Pages.Slider
 @using Domain_Models.Enums
+@using Domain_Models.Database
 @using Domain_Models.Webshop
 @using Domain_Models.Webshop.Medias
 @using Domain_Models.Webshop.Users
@@ -8,13 +9,7 @@
 <PageTitle>Front page</PageTitle>
 
 <div class="sliders">
-    <Slider Title="Best Sellers"></Slider>
+    <Slider Title="Best Sellers" Filter="@(new Filter())" Link="/category/All"></Slider>
 
-    <Slider Title="New Titles"></Slider>
+    <Slider Title="New Titles" Filter="@(new Filter())" Link="/category/Oscar-Wilde"></Slider>
 </div>
-
-
-@code
-{
-
-}

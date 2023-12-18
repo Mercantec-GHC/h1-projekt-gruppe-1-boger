@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,12 @@ namespace Domain_Models.Database
 {
     public class Filter
     {
-        public int FetchAmount = 5;
+        public int FetchAmount = 4;
         public int FetchOffset = 0;
         public string SearchTerm = "";
         public int[] TagIds = new int[0];
 
-        public Filter(string searchTerm = "", int[] tagIds = null, int fetchAmount = 5, int fetchOffset = 0)
+        public Filter(string searchTerm = "", int[] tagIds = null, int fetchAmount = 4, int fetchOffset = 0)
         {
             FetchAmount = fetchAmount;
             FetchOffset = fetchOffset;
@@ -23,18 +24,27 @@ namespace Domain_Models.Database
 
 
 
-        public string GetSqlCommand()
+        public SqlCommand GetSqlCommand()
         {
-            string sql = "SELECT l.id FROM listing_table as l;";
-            /*
+
+            SqlCommand cmd = new SqlCommand(GetSqlString());
+            return cmd;
+        }
+
+        private string GetSqlString()
+        {
+            string sql = "SELECT l.id FROM listing_table AS l ";
+
             sql += "INNER JOIN media_table AS m ON l.media_id = m.media_id ";
+            /*
             sql += "INNER JOIN book_table AS book ON book.media_id = m.media_id ";
             sql += "INNER JOIN board_games_table AS boardgame ON boardgame.media_id = m.media_id ";
             sql += "INNER JOIN artist_table AS artist1 ON artist1.artist_id = book.artist_id ";
             sql += "INNER JOIN artist_table AS artist2 ON artist2.artist_id = boardgame.artist_id ";
-            
-            sql += $"WHERE ( m.title LIKE '%{SearchTerm}%' OR artist1.name LIKE '%{SearchTerm}%' OR artist2.name LIKE '%{SearchTerm}%' )";
             */
+
+            sql += $"WHERE ( m.title LIKE '%{SearchTerm}%' ) "; // OR artist1.name LIKE '%{SearchTerm}%' OR artist2.name LIKE '%{SearchTerm}%' 
+
             /*
             if (TagIds.Length > 0)
             {
@@ -49,8 +59,9 @@ namespace Domain_Models.Database
             }
             */
 
-            //sql += $"ORDER BY l.id OFFSET {FetchOffset} ROWS FETCH NEXT {FetchAmount} ROWS ONLY;";
+            sql += $"ORDER BY l.id OFFSET {FetchOffset} ROWS FETCH NEXT {FetchAmount} ROWS ONLY;";
 
+            Console.WriteLine(sql);
             return sql;
         }
     }

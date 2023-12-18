@@ -142,20 +142,22 @@ namespace Domain_Models.Database
                 return new Listing[0];
 
             string[] rowArray = results.Split(RowDelimiter);
-            Listing[] listings = new Listing[rowArray.Length];
+
+            List<Listing> listings = new List<Listing>();
 
             for (int i = 0; i < rowArray.Length; i++)
             {
+                Console.WriteLine(rowArray[i]);
                 string[] resultArray = rowArray[i].Split(FieldDelimiter);
-                listings[i] = new Listing();
                 if (resultArray[0] == string.Empty)
                     continue;
+                listings.Add(new Listing());
                 listings[i].GetDBEntry(int.Parse(resultArray[0]));
                 
             }
 
 
-            return listings;
+            return listings.ToArray();
         }
 
 

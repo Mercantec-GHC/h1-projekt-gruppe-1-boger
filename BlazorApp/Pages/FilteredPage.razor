@@ -1,0 +1,40 @@
+﻿@page "/category/{category}"
+@using BlazorApp.Pages.ListingBoxes;
+@using Domain_Models.Database;
+@using Domain_Models.Webshop;
+
+<h3>@category</h3>
+
+<div class="cat-page" @onscroll="@OnScroll()">
+    @foreach (var listing in Listings)
+    {
+        <ListingBox Size=1 listing=@listing></ListingBox>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public string category { get; set; } = "All";
+
+    List<Listing> Listings = new List<Listing>();
+
+    protected override void OnInitialized()
+    {
+        if (category == "All")
+            Listings = DatabaseHandler.Search(new Filter()).ToList();
+        else
+        Listings = DatabaseHandler.Search(new Filter(searchTerm: category)).ToList();
+    }
+
+    private EventCallback OnScroll()
+    {
+        Console.WriteLine("Scrolling");
+        return new EventCallback();
+    }
+
+
+
+    
+
+}
