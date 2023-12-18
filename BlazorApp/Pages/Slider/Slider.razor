@@ -2,6 +2,7 @@
 @namespace BlazorApp.Pages.Slider
 @using BlazorApp.Pages.ListingBoxes
 @using Domain_Models
+@using Domain_Models.Database
 @using Domain_Models.Enums
 @using Domain_Models.Webshop
 @using Domain_Models.Webshop.Users
@@ -31,16 +32,15 @@
     public string Link { get; set; } = "/";
 
     [Parameter]
-    public List<Listing> Listings { get; set; } = new List<Listing>()
+    public Filter Filter { get; set; } = new Filter();
+
+    [Parameter]
+    public List<Listing> Listings { get; set; } = new List<Listing>();
+
+    protected override void OnInitialized()
     {
-        new Listing() { Condition = CONDITION.NEW, ID = 1, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 2, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 3, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 4, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 5, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 6, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } },
-        new Listing() { Condition = CONDITION.NEW, ID = 7, Price = 99, Item = new Media() { Title = "Book title" }, Seller = new Seller() { Name = "Seller" } }
-    };
+        Listings = DatabaseHandler.Search(Filter).ToList();
+    }
 
     
 }

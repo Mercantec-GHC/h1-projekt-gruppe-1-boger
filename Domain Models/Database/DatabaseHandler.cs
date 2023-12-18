@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Domain_Models.Webshop;
+using Microsoft.Data.SqlClient;
 
 namespace Domain_Models.Database
 {
@@ -102,15 +103,44 @@ namespace Domain_Models.Database
 
             SqlDataReader reader = cmd.ExecuteReader();
             string response = "";
-            while (reader.Read())
+            
+            if (reader.HasRows)
             {
-                for (int i = 0; i < reader.FieldCount; i++)
+                while (reader.Read())
                 {
-                    response += reader.GetValue(i) + " ";
-                }
-            }   response += FieldDelimiter;
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        response += reader.GetValue(i) + " ";
+                    }
+                }   response += FieldDelimiter;
+            }
+            else
+            {
+                response = "EMPTY";
+            }
 
+            reader.Close();
             return response;
+        }
+
+        public static Listing[] Search(Filter filter)
+        {
+            // TODO: Implement search
+            string results = FetchFromTable(new SqlCommand(filter.GetSqlCommand()));
+
+            if (results == "EMPTY")
+                return new Listing[0];
+
+            string[] resultArray = results.Split(FieldDelimiter);
+
+            Listing[] listings = new Listing[resultArray.Length];
+
+            for (int i = 0; i < resultArray.Length; i++)
+            {
+                listings[i] = new Listing();
+                listings[i].GetDBEntry(int.Parse(resultArray[0]));
+            }
+            return listings;
         }
 
 
