@@ -20,11 +20,12 @@ namespace Domain_Models.Webshop.Medias
 
             SqlCommand cmd = new SqlCommand("INSERT INTO book_table (media_id, artist_id, year, pages, language) VALUES (@mediaid, @author, @year, @pages, @language)");
             cmd.Parameters.AddWithValue("@mediaid", Id);
-            cmd.Parameters.AddWithValue("@author", new Random((int)DateTime.Now.ToOADate()).Next());
+            cmd.Parameters.AddWithValue("@author", Author);
             cmd.Parameters.AddWithValue("@year", Year);
             cmd.Parameters.AddWithValue("@pages", Pages);
             cmd.Parameters.AddWithValue("@language", $"{Language}");
 
+           
             DatabaseHandler.FetchFromTable(cmd);
         }
 

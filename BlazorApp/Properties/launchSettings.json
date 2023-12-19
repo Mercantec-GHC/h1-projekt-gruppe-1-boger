@@ -5,7 +5,7 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "connectionstring": "Enter connection string here!"
+        "connectionstring": "Server=tcp:secondhandbooks.database.windows.net,1433;Initial Catalog=SecondhandBooksDB;Persist Security Info=False;User ID=secbookadmin;Password=Prideandprejudice!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7023;http://localhost:5021"

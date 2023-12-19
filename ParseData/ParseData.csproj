@@ -23,4 +23,10 @@
     <ProjectReference Include="..\Domain Models\Domain Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="BoardGames.tsv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

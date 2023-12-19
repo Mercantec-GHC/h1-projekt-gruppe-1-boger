@@ -9,7 +9,7 @@ namespace Domain_Models.Webshop.Medias
         public string? Title { get; set; } = "Empty";
         public string? Description { get; set; } = "Empty";
         public List<Tag>? Tags { get; set; }
-        public int Price { get; set; } = 99;
+        public float Price { get; set; } = 99;
         public string ImagePath { get; set; } = "Images/images.png";
 
         public virtual void AddDBEntry()

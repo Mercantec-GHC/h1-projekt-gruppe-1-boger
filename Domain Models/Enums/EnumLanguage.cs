@@ -1,6 +1,4 @@
-﻿using static Domain_Models.Webshop.DataSet;
-
-namespace Domain_Models.Enums
+﻿namespace Domain_Models.Enums
 {
     public enum LANGUAGE
     {

@@ -19,7 +19,7 @@ namespace Domain_Models.Webshop.Medias
 
             SqlCommand cmd = new SqlCommand("INSERT INTO board_games_table (media_id, artist_id, min_players, max_players, min_age, play_time) VALUES (@mediaid, @author, @min_players, @max_players, @min_age, @play_time)");
             cmd.Parameters.AddWithValue("@mediaid", Id);
-            cmd.Parameters.AddWithValue("@author", new Random((int)DateTime.Now.ToOADate()).Next());
+            cmd.Parameters.AddWithValue("@author", Developer);
             cmd.Parameters.AddWithValue("@min_players", MinPlayerCount);
             cmd.Parameters.AddWithValue("@max_players", MaxPlayerCount);
             cmd.Parameters.AddWithValue("@min_age", MinAge);

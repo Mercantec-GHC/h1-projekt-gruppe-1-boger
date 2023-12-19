@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain_Models.Enums;
+using Domain_Models.Database;
 
 namespace ParseData
 {
@@ -18,9 +19,10 @@ namespace ParseData
 
             lines.ForEach(line =>
             {
-                Console.WriteLine(line);
+                
                 var bookLines = SplitLine(line);
                 var book = Creator(bookLines);
+                books.Add(book);
             });
 
             return books;
@@ -34,7 +36,7 @@ namespace ParseData
         {
             return line.Split(sep).ToList();
         }
-        private List<Tag> CreateTags(string tagString, char sep = ',')
+        public List<Tag> CreateTags(string tagString, char sep = ',')
         {
             var tagNames = tagString.Split(sep).ToList();
             var tags = new List<Tag>();
@@ -83,12 +85,13 @@ namespace ParseData
             book.Author = columns[1];
             book.Pages = int.Parse(columns[2]);
             book.Year = int.Parse(columns[3]);
-            book.Language = (DataSet.Language)language[columns[4]];
-            book.Genre = (DataSet.Genre)gerne[columns[5]];
+            book.Language = (Domain_Models.Enums.LANGUAGE)language[columns[4]];
+            book.Genre = (Domain_Models.Enums.GENRE)gerne[columns[5]];
             book.Tags = CreateTags(columns[6]);
             book.Description = columns[7];
-            book.Price = int.Parse(columns[9]);
+            book.Price = float.Parse(columns[9]);
 
+            
             return book;
         }
     }

@@ -21,6 +21,7 @@ namespace Domain_Models.Database
 
             try
             {
+               
                 _connection = new SqlConnection(connectionstring);
             }
             catch (Exception e)
@@ -135,7 +136,7 @@ namespace Domain_Models.Database
         public static Listing[] Search(Filter filter)
         {
             // TODO: Implement search
-            string results = FetchFromTable(new SqlCommand(filter.GetSqlCommand()));
+            string results = FetchFromTable(filter.GetSqlCommand());
 
 
             if (results == "EMPTY")
