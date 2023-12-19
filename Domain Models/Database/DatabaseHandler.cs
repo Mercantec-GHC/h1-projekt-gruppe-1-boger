@@ -14,7 +14,7 @@ namespace Domain_Models.Database
         public static string RowDelimiter = "\n";
         public static bool IsConnected { get => _isConnected; set => _isConnected = value; }
 
-        public static bool Create(string? connectionstring = "Server=tcp:secondhandbooks.database.windows.net,1433;Initial Catalog=SecondhandBooksDB;Persist Security Info=False;User ID=secbookadmin;Password=Prideandprejudice!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;")
+        public static bool Create(string? connectionstring = "none")
         {
             if (connectionstring == "none")
                 connectionstring = Environment.GetEnvironmentVariable("connectionstring");
@@ -135,7 +135,7 @@ namespace Domain_Models.Database
         public static Listing[] Search(Filter filter)
         {
             // TODO: Implement search
-            string results = FetchFromTable(new SqlCommand(filter.GetSqlCommand()));
+            string results = FetchFromTable(filter.GetSqlCommand());
 
 
             if (results == "EMPTY")
