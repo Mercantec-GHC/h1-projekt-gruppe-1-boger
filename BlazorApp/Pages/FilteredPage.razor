@@ -6,10 +6,9 @@
 <h3>@category</h3>
 
 <div class="cat-page" @onscroll="@OnScroll()">
-    @foreach (var listing in Listings)
-    {
+    <Virtualize Items="Listings" Context="listing">
         <ListingBox Size=1 listing=@listing></ListingBox>
-    }
+    </Virtualize>
 </div>
 
 @code {
@@ -17,24 +16,16 @@
     [Parameter]
     public string category { get; set; } = "All";
 
-    List<Listing> Listings = new List<Listing>();
+    ICollection<Listing> Listings = new List<Listing>();
 
     protected override void OnInitialized()
     {
+        List<Listing> listings = new List<Listing>();
         if (category == "All")
-            Listings = DatabaseHandler.Search(new Filter()).ToList();
+            listings = DatabaseHandler.Search(new Filter(fetchAmount: 0)).ToList();
         else
-        Listings = DatabaseHandler.Search(new Filter(searchTerm: category)).ToList();
+            listings = DatabaseHandler.Search(new Filter(searchTerm: category, fetchAmount: 0)).ToList();
+
+        Listings = listings;
     }
-
-    private EventCallback OnScroll()
-    {
-        Console.WriteLine("Scrolling");
-        return new EventCallback();
-    }
-
-
-
-    
-
 }

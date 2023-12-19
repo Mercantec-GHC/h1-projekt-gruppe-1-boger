@@ -59,7 +59,10 @@ namespace Domain_Models.Database
             }
             */
 
-            sql += $"ORDER BY l.id OFFSET {FetchOffset} ROWS FETCH NEXT {FetchAmount} ROWS ONLY;";
+            if (FetchAmount > 0)
+                sql += $"ORDER BY l.id OFFSET {FetchOffset} ROWS FETCH NEXT {FetchAmount} ROWS ONLY;";
+            else
+                sql += ";";
 
             Console.WriteLine(sql);
             return sql;
