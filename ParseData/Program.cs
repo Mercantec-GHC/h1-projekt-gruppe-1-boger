@@ -1,17 +1,17 @@
 ﻿using ParseData;
 using Domain_Models.Database;
 
-DatabaseHandler.Create();
+//DatabaseHandler.Create();
 
-ParseBoardGames parseDB = new ParseBoardGames();
-var boardGame = parseDB.ParseBoardGame("./BoardGames.tsv");
+//ParseBoardGames parseDB = new ParseBoardGames();
+//var boardGame = parseDB.ParseBoardGame("./BoardGames.tsv");
 
 
-foreach (var item in boardGame)
-{
+// foreach (var item in boardGame)
+//{
     
 
-    item.AddDBEntry();
+//    item.AddDBEntry();
 
-}
+//}
 

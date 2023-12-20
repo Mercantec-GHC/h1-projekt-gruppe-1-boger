@@ -17,14 +17,14 @@ namespace Domain_Models.Webshop.Medias
             // then a check if the media already exists in the database
             base.AddDBEntry();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO board_games_table (media_id, artist_id, min_players, max_players, min_age, play_time) VALUES (@mediaid, @author, @min_players, @max_players, @min_age, @play_time)");
-            cmd.Parameters.AddWithValue("@mediaid", Id);
+            SqlCommand cmd = new SqlCommand("INSERT INTO board_games_table (media_id, artist_id, min_players, max_players, min_age, play_time) VALUES (@media_id, @author, @min_players, @max_players, @min_age, @play_time)");
+            cmd.Parameters.AddWithValue("@media_id", Id);
             cmd.Parameters.AddWithValue("@author", Developer);
             cmd.Parameters.AddWithValue("@min_players", MinPlayerCount);
             cmd.Parameters.AddWithValue("@max_players", MaxPlayerCount);
             cmd.Parameters.AddWithValue("@min_age", MinAge);
             cmd.Parameters.AddWithValue("@play_time", PlayTime);
-
+           
             DatabaseHandler.FetchFromTable(cmd);
         }
 
