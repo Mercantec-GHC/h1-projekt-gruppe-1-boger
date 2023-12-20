@@ -1,0 +1,61 @@
+﻿@page "/Books"
+
+@using BlazorApp.Pages.ListingBoxes
+@using Domain_Models
+@using Domain_Models.Database
+@using Domain_Models.Enums
+@using Domain_Models.Webshop
+@using Domain_Models.Webshop.Users
+@using Domain_Models.Webshop.Medias
+
+
+
+<h1>Books</h1>
+   
+
+<div class="slider">
+   
+    <div class="slider-body">
+        @foreach (var book in BooksList)
+        {
+           <ListingBox Size=0 listing=@listing ></ListingBox>
+
+        }
+    </div>
+</div>
+
+@code 
+{
+    public List<Book> BooksList { get; set; }
+    public Book bookItem = new Book();
+
+    public Listing listing { get; set; } = new Listing()
+    {
+        Condition = CONDITION.NEW,
+        Price = 199
+
+
+    };
+
+    protected override void OnInitialized()
+    {
+        BookDbContext dbContext = new BookDbContext();
+
+        BooksList = dbContext.GetAll();
+
+    }
+    
+
+   // public Listing listing { get; set; } = new Listing() 
+   // { 
+   //  @foreach (var book in BookList)
+   //      {
+   //          Condition = CONDITION.NEW,
+   //          Price = book.Price,
+   //          Item = new Media() {
+   //              Title = book.title,
+   //          }
+    
+   //      }
+   // }
+}

@@ -102,7 +102,6 @@ namespace Domain_Models.Database
             }
 
             Connect();
-            // Console.WriteLine(cmd.ExecuteScalar().ToString());
             cmd.Connection = _connection;
 
 

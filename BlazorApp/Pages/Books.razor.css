@@ -1,0 +1,5 @@
+﻿.slider-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
