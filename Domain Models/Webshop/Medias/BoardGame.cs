@@ -68,8 +68,7 @@ namespace Domain_Models.Webshop.Medias
 
             SqlCommand cmd = new SqlCommand("UPDATE board_games_table SET artist_id = @author, min_players = @min_players, max_players = @max_players, min_age = @min_age, play_time = @play_time WHERE media_id = @id");
             cmd.Parameters.AddWithValue("@id", Id);
-            cmd.Parameters.AddWithValue("@author",
-                               new Random((int)DateTime.Now.ToOADate()).Next());
+            cmd.Parameters.AddWithValue("@author", Developer);
             cmd.Parameters.AddWithValue("@min_players", MinPlayerCount);
             cmd.Parameters.AddWithValue("@max_players", MaxPlayerCount);
             cmd.Parameters.AddWithValue("@min_age", MinAge);

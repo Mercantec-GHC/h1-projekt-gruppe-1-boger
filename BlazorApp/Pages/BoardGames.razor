@@ -18,45 +18,42 @@
     
     <div class="slider-body">
         @foreach (var book in BoardGamesList)
-        {
-            <ListingBox Size=0 listing=@listing></ListingBox>
+            @foreach (var listItem in listing)
+            {
+                <ListingBox Size=0 listing=@listItem></ListingBox>
 
-        }
+            }
     </div>
 </div>
 
 @code
 {
-    public List<Book> BoardGamesList { get; set; }
-   
+    public List<BoardGame> BoardGamesList { get; set; }
+    public BoardGame boardGame = new BoardGame();
+    public List<Listing> listing { get; set; }
 
-    public Listing listing { get; set; } = new Listing()
-        {
-            Condition = CONDITION.NEW,
-            Price = 199
-
-
-        };
 
     protected override void OnInitialized()
     {
-        BookDbContext dbContext = new BookDbContext();
+        BoardGameDbContext dbContext = new BoardGameDbContext();
+        listing = new List<Listing>();
 
         BoardGamesList = dbContext.GetAll();
+        foreach (var boardGame in BoardGamesList)
+        {
+            var item = new Listing()
+                {
+                    Condition = Domain_Models.Enums.CONDITION.NEW,
+                    ID = boardGame.Id,
+                    Price = (int)boardGame.Price,
+                    Item = new Domain_Models.Webshop.Medias.Media() { Title = boardGame.Title },
+                    Seller = new Domain_Models.Webshop.Users.Seller() { Name = boardGame.Developer }
+                };
+
+            listing.Add(item);
+        }
 
     }
 
 
-    // public Listing listing { get; set; } = new Listing()
-    // {
-    //  @foreach (var book in BookList)
-    //      {
-    //          Condition = CONDITION.NEW,
-    //          Price = book.Price,
-    //          Item = new Media() {
-    //              Title = book.title,
-    //          }
-
-    //      }
-    // }
 }

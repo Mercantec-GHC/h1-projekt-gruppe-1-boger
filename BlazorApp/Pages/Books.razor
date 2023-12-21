@@ -16,9 +16,9 @@
 <div class="slider">
    
     <div class="slider-body">
-        @foreach (var book in BooksList)
+        @foreach (var listItem in listing)
         {
-           <ListingBox Size=0 listing=@listing ></ListingBox>
+            <ListingBox Size=0 listing=@listItem></ListingBox>
 
         }
     </div>
@@ -28,34 +28,29 @@
 {
     public List<Book> BooksList { get; set; }
     public Book bookItem = new Book();
-
-    public Listing listing { get; set; } = new Listing()
-    {
-        Condition = CONDITION.NEW,
-        Price = 199
-
-
-    };
+    public List<Listing> listing { get; set; }
 
     protected override void OnInitialized()
     {
         BookDbContext dbContext = new BookDbContext();
 
+        listing = new List<Listing>() { };
+
         BooksList = dbContext.GetAll();
+        foreach (var book in BooksList)
+        {
+            var item = new Listing() { 
+                Condition = Domain_Models.Enums.CONDITION.NEW, 
+                ID = book.Id, 
+                Price = (int) book.Price,
+                Item = new Domain_Models.Webshop.Medias.Media() { Title = book.Title },
+                Seller = new Domain_Models.Webshop.Users.Seller() { Name = book.Author } };
+
+            listing.Add(item);
+        }
 
     }
     
 
-   // public Listing listing { get; set; } = new Listing() 
-   // { 
-   //  @foreach (var book in BookList)
-   //      {
-   //          Condition = CONDITION.NEW,
-   //          Price = book.Price,
-   //          Item = new Media() {
-   //              Title = book.title,
-   //          }
-    
-   //      }
-   // }
+  
 }
